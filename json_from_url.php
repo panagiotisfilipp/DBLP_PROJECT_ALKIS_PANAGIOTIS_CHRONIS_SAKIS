@@ -1,8 +1,10 @@
 <html>
 <meta charset="utf-8"/>
+<head>
 
+</head>
 <form action="checkbox_value.php" method="post">
-<table border='1' width="120%">
+<table border='1' width="auto">
 	<tbody>
 	<tr>
 			<th colspan="6" align="center" >
@@ -18,6 +20,7 @@
 			
 			
 		</tr>
+
 <?php
        //http://dblp.org/search/publ/api?q=ougiaroglou+Journal+Articles&format=json
         include ('conf.php');//ρυθμίσεις βάσης 
@@ -52,27 +55,28 @@
 		 // echo "<pre>"; 
          // print_r($array_authors); 
          // echo "/<pre>"; 
-        
+        //
+        //"<input type='text'  size='20' name='authors[]' value='".$theentity['info']['authors']['author'][$i]."'.',' tabindex='-1' readonly>";
+        //<?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; 
+        //"<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";
 ?>
         
         <tr>
 			
-		    <td> <?php 
+		    <td><textarea name="authors[]" cols="40" rows="3" tabindex='-1' readonly><?php 
 	          for($i=0;$i<$length_author;$i++){
-	           echo "<input type='text'  size='20' name='authors[]' value='".$theentity['info']['authors']['author'][$i]."'.',' tabindex='-1' readonly>";
-	                                           }?> </td>
-            <td> <?php  echo "<input type='text'  size='100' ' name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>";?> </td>
-			<td> <?php echo "<input type='text' name='year[]' value='".$theentity['info']['year']."' tabindex='-1' readonly>"; ?> </td>
+	           echo $theentity['info']['authors']['author'][$i].',';
+	           
+	                                           }?></textarea></td>
+            <td> <?php  echo "<input type='text'  size='120'  name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>";?> </td>
+			<td> <?php echo "<input type='text' size='5' name='year[]' value='".$theentity['info']['year']."' tabindex='-1' readonly>"; ?> </td>
 			<td> <?php echo "<input type='text' name='type[]' value='".$theentity['info']['type']."' tabindex='-1' readonly>" ; ?> </td>
 		
-			<td> <?php echo "<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";?></td>
-			<td> <?php 
-			echo "<input type='checkbox' name='checkbox[]' value='". $j++."'<br/>";?> </td>
-			<td><?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; ?> </td>
+			<td><?php echo"<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";?></td>
+			<td> <?php echo "<input type='checkbox' name='checkbox[]' value='". $j++."'<br/>";?> </td>
+			<td><?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; ?></td>
            		 
         </tr>
-		
-			
 			<?php echo"<input type='hidden' name='insupd' value='insert'>"; ?>  
 <?php endforeach; ?>
 

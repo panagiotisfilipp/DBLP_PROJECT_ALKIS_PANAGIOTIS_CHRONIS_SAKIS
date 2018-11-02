@@ -40,24 +40,7 @@ while($row = mysql_fetch_array($result_id_url)) {
 		
 		
 	}
-	 //
-
-  
-// echo $_POST['authors'][$j]. '<br>';
-//eisagogi stoixeion stin topiki basi
-//if($_POST['insupd']=='insert' && $url_id_db!==$url_id_post )
-//{
-	
-	//$title=array();//pinakas title
-	//ekxorisi timon stis metablites
-	//$title=$_POST['title'];//title from file json_from_url
-	
-	
-//foreach($_POST['checkbox'] as $j)
-//	  {
-   
-  
-
+	 
 	$insert_paper_query= " INSERT INTO paper
 					           SET 
 							authors='".$_POST['authors'][$j]."',
@@ -70,7 +53,7 @@ while($row = mysql_fetch_array($result_id_url)) {
 
 	$insert_paper=mysql_query($insert_paper_query) or die('Error_query,failed'); 
 	
-	//}
+	
 
 	
 	if ($insert_paper)
@@ -83,7 +66,7 @@ while($row = mysql_fetch_array($result_id_url)) {
 		echo '<script language="javascript"> document.location="index_st.php"; </script>';
 		exit();
 	 }
-//}
+
 }
 
 ?>
