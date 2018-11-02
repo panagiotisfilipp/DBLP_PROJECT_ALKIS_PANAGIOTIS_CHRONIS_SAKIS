@@ -1,7 +1,7 @@
 <html>
 <meta charset="utf-8"/>
 
-<form action="insert_checkbox_value.php" method="post">
+<form action="checkbox_value.php" method="post">
 <table border='1' width="120%">
 	<tbody>
 	<tr>
