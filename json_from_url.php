@@ -1,7 +1,7 @@
 <html>
 <meta charset="utf-8"/>
 
-<form action="checkbox_value.php" method="post">
+<form action="insert_checkbox_value.php" method="post">
 <table border='1' width="120%">
 	<tbody>
 	<tr>
@@ -31,12 +31,13 @@
 		
 		$url = "http://dblp.org/search/publ/api?q=$search_author+$search_type&format=json"; // path to your JSON file
 		//echo $url.'<br>';//elegxos url
-        $data = file_get_contents($url); // put the contents of the file into a variable
+        $data = file_get_contents($url); // put the contents of the file into a variable 
         $characters = json_decode($data,true); // decode the JSON feed
         $result = array();
-	    
+	    $array_authors=array();//pinakas poy krata tous authors ana dimosieusi
+	    $j=0;//orismos metablitis metrisis ton check boxes
 		//elegxos iparjis tetoiou typou dimosieusi me basi ta arxeia pou vrethikan
-		 echo "<b>Οι Δημοσιευσεις του συγγραφέα που επιλέξατε είναι :</b>". $characters['result']['hits']['@sent'];//minima pou emfanizei to sinolo ton dimosieuseon
+		 echo "<b>Οι Δημοσιευσεις του συγγραφέα που εμφανίσατε είναι :</b>". $characters['result']['hits']['@sent'];//minima pou emfanizei to sinolo ton dimosieuseon
 		if(($characters['result']['hits']['@sent']==0))//elegxo tin timi tou value tou json
 		{
 			echo '<script language="javascript">alert("Ο συγκεκριμένος συγγραφέας δεν έχει δημοσιεύσει κείμενο με αυτόν τον τύπο !\nΠροσπαθήστε ξανά!");document.location="index_st.php";</script>'; 
@@ -47,21 +48,27 @@
 		 foreach ($characters['result']['hits']['hit'] as $theentity) :
 		 
 		 $length_author = count($theentity['info']['authors']['author']);//mikos pinaka author
+		 $array_authors=$theentity['info']['authors']['author'];
+		 // echo "<pre>"; 
+         // print_r($array_authors); 
+         // echo "/<pre>"; 
+        
 ?>
         
         <tr>
 			
 		    <td> <?php 
 	          for($i=0;$i<$length_author;$i++){
-	           echo $theentity['info']['authors']['author'][$i].',';
-	                                           } ?> </td>
-            <td> <?php  echo $theentity['info']['title'];?> </td>
-			<td> <?php echo $theentity['info']['year']; ?> </td>
-			<td> <?php echo $theentity['info']['type']; ?> </td>
+	           echo "<input type='text'  size='20' name='authors[]' value='".$theentity['info']['authors']['author'][$i]."'.',' tabindex='-1' readonly>";
+	                                           }?> </td>
+            <td> <?php  echo "<input type='text'  size='100' ' name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>";?> </td>
+			<td> <?php echo "<input type='text' name='year[]' value='".$theentity['info']['year']."' tabindex='-1' readonly>"; ?> </td>
+			<td> <?php echo "<input type='text' name='type[]' value='".$theentity['info']['type']."' tabindex='-1' readonly>" ; ?> </td>
 		
-			<td><a href="<?php echo  $theentity['info']['url']; ?>"><img src="/images/view.png"></a> </td>
-			<td> <?php echo "<input type='checkbox' name='check_list[]' value='".$theentity['url']."'<br/>";?> </td>
-			
+			<td> <?php echo "<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";?></td>
+			<td> <?php 
+			echo "<input type='checkbox' name='checkbox[]' value='". $j++."'<br/>";?> </td>
+			<td><?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; ?> </td>
            		 
         </tr>
 		
