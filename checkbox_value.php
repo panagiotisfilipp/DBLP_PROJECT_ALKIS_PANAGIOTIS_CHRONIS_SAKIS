@@ -19,7 +19,7 @@ exit();
 							}
 							
 //elegxos idion dimosieuseon an iparxei esto kai mia stamata opoiadipote eisagogi stin basi
-$query_check_paper = "SELECT url_id  FROM paper";
+$query_check_paper = "SELECT url_id  FROM papers";
 $result_id_url=@mysql_query($query_check_paper) or die ('Error, query failed username');
 foreach ($_POST['checkbox']  as $j){
 	$url_id_post= $_POST['url_id'][$j];
@@ -41,7 +41,7 @@ while($row = mysql_fetch_array($result_id_url)) {
 		
 	}
 	 
-	$insert_paper_query= " INSERT INTO paper
+	$insert_paper_query= " INSERT INTO papers
 					           SET 
 							authors='".$_POST['authors'][$j]."',
 							title='".$_POST['title'][$j]."',
