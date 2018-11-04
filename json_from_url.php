@@ -57,7 +57,7 @@ return true;
         $data = file_get_contents($url); // put the contents of the file into a variable 
         $characters = json_decode($data,true); // decode the JSON feed
         $result = array();
-	    $array_authors=array();//pinakas poy krata tous authors ana dimosieusi
+	   
 	    $j=0;//orismos metablitis metrisis ton check boxes
 		//elegxos iparjis tetoiou typou dimosieusi me basi ta arxeia pou vrethikan
 		 echo "<b>Οι Δημοσιευσεις του συγγραφέα που εμφανίσατε είναι :</b>". $characters['result']['hits']['@sent'];//minima pou emfanizei to sinolo ton dimosieuseon
