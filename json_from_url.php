@@ -57,13 +57,13 @@ return true;
         $data = file_get_contents($url); // put the contents of the file into a variable 
         $characters = json_decode($data,true); // decode the JSON feed
         $result = array();
-	   
+	    $array_authors=array();//pinakas poy krata tous authors ana dimosieusi
 	    $j=0;//orismos metablitis metrisis ton check boxes
 		//elegxos iparjis tetoiou typou dimosieusi me basi ta arxeia pou vrethikan
 		 echo "<b>Οι Δημοσιευσεις του συγγραφέα που εμφανίσατε είναι :</b>". $characters['result']['hits']['@sent'];//minima pou emfanizei to sinolo ton dimosieuseon
 		if(($characters['result']['hits']['@sent']==0))//elegxo tin timi tou value tou json
 		{
-			echo '<script language="javascript">alert("Ο συγκεκριμένος συγγραφέας δεν έχει δημοσιεύσει κείμενο με αυτόν τον τύπο !\nΠροσπαθήστε ξανά!");document.location="index.php";</script>'; 
+			echo '<script language="javascript">alert("Ο συγκεκριμένος συγγραφέας δεν έχει δημοσιεύσει κείμενο με αυτόν τον τύπο !\nΠροσπαθήστε ξανά!");document.location="index_st.php";</script>'; 
 			
 		}
 	
@@ -71,9 +71,19 @@ return true;
 		 foreach ($characters['result']['hits']['hit'] as $theentity) :
 		 
 		 $length_author = count($theentity['info']['authors']['author']);//mikos pinaka author
-		
-?>
+		 $array_authors=$theentity['info']['authors']['author'];
+		 // echo "<pre>"; 
+         // print_r($array_authors); 
+         // echo "/<pre>"; 
+        //
+        //"<input type='text'  size='20' name='authors[]' value='".$theentity['info']['authors']['author'][$i]."'.',' tabindex='-1' readonly>";
+        //<?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; 
+        //"<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";
+$url_c = "https://www.click2web.gr";
+		?>
         
+			
+		
         <tr>
 			
 		    <td><textarea name="authors[]" cols="40" rows="3" tabindex='-1' readonly><?php
@@ -87,8 +97,8 @@ return true;
             <td> <?php  echo "<input type='text'  size='120'  name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>";?> </td>
 			<td> <?php echo "<input type='text' size='5' name='year[]' value='".$theentity['info']['year']."' tabindex='-1' readonly>"; ?> </td>
 			<td> <?php echo "<input type='text' name='type[]' value='".$theentity['info']['type']."' tabindex='-1' readonly>" ; ?> </td>
-		
-			<td><?php echo"<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";?></td>
+		    <?php echo "<input type='hidden' size='50' name='url[]' value='<a href=\"".$theentity['info']['url']."'>";?>
+			<td><?php echo '<a href='.$theentity['info']['url']. ' target=\"_blank\"><img src=./images/view.png /></a>';?></td>
 			<td> <?php echo "<input type='checkbox' name='checkbox[]' value='". $j++."'<br/>";?> </td>
 			<td><?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; ?></td>
            		 
