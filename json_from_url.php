@@ -64,7 +64,7 @@ return true;
 		if(($characters['result']['hits']['@sent']==0))//elegxo tin timi tou value tou json
 		{
 			echo '<script language="javascript">alert("Ο συγκεκριμένος συγγραφέας δεν έχει δημοσιεύσει κείμενο με αυτόν τον τύπο !\nΠροσπαθήστε ξανά!");document.location="index_st.php";</script>'; 
-			break;
+			
 		}
 	
 		else
