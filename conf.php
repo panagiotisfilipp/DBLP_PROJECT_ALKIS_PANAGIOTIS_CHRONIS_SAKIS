@@ -1,13 +1,16 @@
  <?php
 
-$dbhost = 'localhost';
-   $dbuser = 'root';
-   $dbpass = '';
-   
-   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
-   
-   if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
-   }
-   mysql_select_db('m_102'); 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "m_102";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+ 
+ 
 ?> 
