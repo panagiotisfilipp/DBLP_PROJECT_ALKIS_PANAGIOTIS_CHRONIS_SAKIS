@@ -1,7 +1,27 @@
 <html>
 <meta charset="utf-8"/>
 <head>
-
+<!--elexoume an o xristis exei epilejei kapoio chechbox kai emfanizoume katalilo minima-->
+<script>
+	function checkentryform() {
+	var chks = document.getElementsByName('checkbox[]');
+    var hasChecked = false;
+    for (var i = 0; i < chks.length; i++)
+             {
+              if (chks[i].checked)
+                 {
+                  hasChecked = true;
+                 break;
+                  }
+              }
+              if (hasChecked == false)
+                  {
+	               alert("Παρακαλώ επιλέξτε τουλάχιστον μια δημοσίευση.!!");
+	              return false;
+                   }
+return true;
+}
+</script>
 </head>
 <form action="checkbox_value.php" method="post">
 <table border='1' width="auto">
@@ -63,7 +83,10 @@
         
         <tr>
 			
-		    <td><textarea name="authors[]" cols="40" rows="3" tabindex='-1' readonly><?php 
+		    <td><textarea name="authors[]" cols="40" rows="3" tabindex='-1' readonly><?php
+              if ($length_author==1)
+	          {echo $theentity['info']['authors']['author'];}
+	          else			
 	          for($i=0;$i<$length_author;$i++){
 	           echo $theentity['info']['authors']['author'][$i].',';
 	           
@@ -83,7 +106,7 @@
 	</tbody>
 		<tr>
 			<td  align='center' colspan='6'><br>
-				<input style="color:red" type='submit' value='ΕΙΣΑΓΩΓΗ ΣΤΗ ΒΑΣΗ' name='submit'/></td>
+				<input style="color:red" type='submit' value='ΕΙΣΑΓΩΓΗ ΣΤΗ ΒΑΣΗ' name='submit' onclick="return checkentryform();" ></td>
 		</tr>
 </table>
 </form>
