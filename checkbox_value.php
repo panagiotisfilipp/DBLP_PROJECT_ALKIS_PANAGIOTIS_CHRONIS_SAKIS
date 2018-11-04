@@ -56,5 +56,5 @@ while($row = mysqli_fetch_array($result_id_url)) {
 	 }
 
 }
-mysql_close($conn);
+$conn->close();
 ?>
