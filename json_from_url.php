@@ -72,14 +72,8 @@ return true;
 		 
 		 $length_author = count($theentity['info']['authors']['author']);//mikos pinaka author
 		 $array_authors=$theentity['info']['authors']['author'];
-		 // echo "<pre>"; 
-         // print_r($array_authors); 
-         // echo "/<pre>"; 
-        //
-        //"<input type='text'  size='20' name='authors[]' value='".$theentity['info']['authors']['author'][$i]."'.',' tabindex='-1' readonly>";
-        //<?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; 
-        //"<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";
-$url_c = "https://www.click2web.gr";
+
+
 		?>
         
 			
