@@ -63,7 +63,7 @@ return true;
 		 echo "<b>Οι Δημοσιευσεις του συγγραφέα που εμφανίσατε είναι :</b>". $characters['result']['hits']['@sent'];//minima pou emfanizei to sinolo ton dimosieuseon
 		if(($characters['result']['hits']['@sent']==0))//elegxo tin timi tou value tou json
 		{
-			echo '<script language="javascript">alert("Ο συγκεκριμένος συγγραφέας δεν έχει δημοσιεύσει κείμενο με αυτόν τον τύπο !\nΠροσπαθήστε ξανά!");document.location="index_st.php";</script>'; 
+			echo '<script language="javascript">alert("Ο συγκεκριμένος συγγραφέας δεν έχει δημοσιεύσει κείμενο με αυτόν τον τύπο !\nΠροσπαθήστε ξανά!");document.location="index.php";</script>'; 
 			
 		}
 	
@@ -71,14 +71,7 @@ return true;
 		 foreach ($characters['result']['hits']['hit'] as $theentity) :
 		 
 		 $length_author = count($theentity['info']['authors']['author']);//mikos pinaka author
-		 $array_authors=$theentity['info']['authors']['author'];
-		 // echo "<pre>"; 
-         // print_r($array_authors); 
-         // echo "/<pre>"; 
-        //
-        //"<input type='text'  size='20' name='authors[]' value='".$theentity['info']['authors']['author'][$i]."'.',' tabindex='-1' readonly>";
-        //<?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; 
-        //"<input type='text' size='50' name='url[]' value='".$theentity['info']['url']."'>";
+		
 ?>
         
         <tr>
