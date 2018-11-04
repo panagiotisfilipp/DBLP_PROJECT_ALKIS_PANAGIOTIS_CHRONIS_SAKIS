@@ -12,7 +12,7 @@ $chk_url = $conn->query($chk_url_id);
 
 if ($chk_url->num_rows > 0) {
 
-   while($row = $$chk_url->fetch_assoc()) {
+   while($row = $chk_url->fetch_assoc()) {
 	  
 	if($row["url_id"]==$url_id){
 			
