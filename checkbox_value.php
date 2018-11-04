@@ -8,7 +8,7 @@ $checked_count = count($_POST['checkbox']);
 							
 //pinakas pou krataei tin katastasi ton dimosieuseon an iparxoun i den iparxoun idi sti basi	
 $query_check_paper = "SELECT url_id  FROM papers";
-$result_id_url=$conn->query($query_check_paper, $conn) or die ('Error, query failed check_paper_in_base');
+$result_id_url=$conn->query($query_check_paper) or die ('Error, query failed check_paper_in_base');
 foreach ($_POST['checkbox']  as $j){
 	$url_id_post= $_POST['url_id'][$j];
  //elegxos idion dimosieuseon an iparxei esto kai mia stamata opoiadipote eisagogi stin basi
