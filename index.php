@@ -1,10 +1,10 @@
-﻿<script>
+﻿<--!<script>
 	function checkentryform() {
 		var cForm   = document.forms.search_author;
 		var errstr  = '';  
 		
 		
-		<!-- search_author: Ελέγχει αν το πεδίο είναι null  -->
+		<!-- search_author: Ελέγχει αν το πεδίο είναι null  
 		if ( cForm.search_author.value==''){
 			errstr = errstr+'Το πεδίο συγγραφέας δεν μπορεί να είναι κενό.\n';
 			cForm.search_author.style.backgroundColor="#ff6347";
@@ -18,7 +18,7 @@
 				
 			document.forms.search_author.submit();
 	}
-</script>
+</script>-->
 
 
 <html>
@@ -73,6 +73,18 @@
 			</td>
 			
 		</tr>
+		<tr>
+			<th align="center" colspan='1'>ΛΕΞΗ ΚΛΕΙΔΙ:</th>
+			<td align='left' colspan='1'>
+				<?php echo"<input type='text' value='' name='title'>"; ?> 
+			</td>
+		</tr>
+			<tr>
+			<th align="center" colspan='1'>ΧΡΟΝΙΑ:</th>
+			<td align='left' colspan='1'>
+				<?php echo"<input type='text' value='' name='year_start'>"; ?> 
+			</td>
+		</tr>
 		
 			</table>
 			<table align= 'center' border="0" cellspacing="1" style="border-collapse: collapse; color:#000000" bordercolor="#111111" width="10%">
@@ -84,5 +96,5 @@
 	</table>
 			</form>
 </body>
-
+<p><b>Μπορείτε να κάνετε αναζήτηση με βάση  τον συγγραφέα,τον τιτλο,την χρονιά και τον τυπο του άρθρου ή συνδυασμος αυτών.</b></p>
 </html>
