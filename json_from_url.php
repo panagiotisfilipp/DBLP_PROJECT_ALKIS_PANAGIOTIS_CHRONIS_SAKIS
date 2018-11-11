@@ -53,7 +53,7 @@ return true;
 		$search_type=$_POST['search_type'];//metabliti type apo post
 		$title=$_POST['title'];//ΛΈΞΗ ΚΛΕΙΔΊ
 		$year_start=$_POST['year_start'];//etos apo 
-		//$year_end=$_POST['year_end'];//etos eos
+		$year_end=$_POST['year_end'];//etos eos ( %7C)
 	    $type_out_ch=array();
 		$type_out_ch[0] = urldecode($search_type);//metabliti tipou xoris '%20'
 		//echo "metabliti xoris kena:".$type_out_ch[0].'<br>';//elegox metablitis 
@@ -61,7 +61,7 @@ return true;
 		//echo $search_type.'<br>';//elegxos typou dimosieusis
 		//http://localhost/MSC_ERG_1/json_from_url.php&q=adamidis
 		$title_p=urlencode($title);
-		$url = "http://dblp.org/search/publ/api?q=$search_author+$search_type+$title_p+$year_start&format=json"; // path to your JSON file
+		$url = "http://dblp.org/search/publ/api?q=$search_author+$search_type+$title_p+$year_start%7C$year_end&h=1000&format=json"; // path to your JSON file
 		//echo $url.'<br>';//elegxos url
         $data = file_get_contents($url); // put the contents of the file into a variable 
         $characters = json_decode($data,true); // decode the JSON feed

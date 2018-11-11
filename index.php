@@ -80,9 +80,15 @@
 			</td>
 		</tr>
 			<tr>
-			<th align="center" colspan='1'>ΧΡΟΝΙΑ:</th>
+			<th align="center" colspan='1'>ΑΠΟ ΕΤΟΣ:</th>
 			<td align='left' colspan='1'>
 				<?php echo"<input type='text' value='' name='year_start'>"; ?> 
+			</td>
+		</tr>
+		<tr>
+			<th align="center" colspan='1'>ΕΩΣ ΕΤΟΣ:</th>
+			<td align='left' colspan='1'>
+				<?php echo"<input type='text' value='' name='year_end'>"; ?> 
 			</td>
 		</tr>
 		
