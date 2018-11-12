@@ -19,8 +19,8 @@ while($row = mysqli_fetch_array($result_id_url)) {
 			
 		echo '<script language="javascript">
 		
-		alert("Υπάρχουν ήδη ίδιες(α) δημοσίευσεις (η)  στην βάση σας,δεν μπορείτε να προχωρήσετε.Επιλέξτε ξανά!!")</script>';		
-		echo '<script language="javascript"> document.location="index.php";</script>';
+		alert("Υπάρχουν ήδη ίδιες(α) δημοσίευσεις (η)  στην βάση σας,δεν μπορείτε να προχωρήσετε.Επιλέξτε ξανά!!");history.go(-1);</script>';		
+		
 	    exit();
 	
 	   
