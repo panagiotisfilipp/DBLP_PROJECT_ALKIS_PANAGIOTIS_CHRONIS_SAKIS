@@ -25,7 +25,7 @@ return true;
 
 </head>
 
-<form name="paper_display" action="checkbox_value.php" method="post">
+<form name="paper_display" action="checkbox_value.php" method="post" enctype="multipart/form-data">
 <table border='1' width="auto">
 	<tbody>
 	<tr>
@@ -34,12 +34,12 @@ return true;
 		</tr>
 		<tr>
 			
-		    <th>Συγγραφέας</th>
-			<th>Τίτλος</th>
-			<th>Χρονιά</th>
-			<th>Τύπος</th>
+		    <th>ΕΠΙΛΟΓΗ</th>
+		    <th>ΣΥΓΓΡΑΦΕΑΣ</th>
+			<th>ΤΙΤΛΟΣ</th>
+			<th>ΧΡΟΝΙΑ</th>
+			<th>ΤΥΠΟΣ</th>
 			<th>URL</th>
-			<th>ΕΠΙΛΟΓΗ</th>
 			
 			
 		</tr>
@@ -127,6 +127,7 @@ return true;
 
    
 			<tr>
+			<td> <?php echo "<input type='checkbox'  name='checkbox[]' value='". $j++."'<br/>";?> </td>
 		    <td><textarea name="authors[]" cols="40" rows="3" tabindex='-1' readonly><?php
 		  //elegxos an iparxei to pedio author ti tha emfanisi ston pinaka
                if($length_author==0){        
@@ -143,13 +144,13 @@ return true;
 		}
 	                                           
 	                                           ?></textarea></td>
-            <td><?php  echo "<input type='text'  size='120'  name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>";?></td>
+            <td><?php  echo "<input type='text'  size='190'  name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>";?></td>
 			<td> <?php echo "<input type='text' size='5' name='year[]' value='".$theentity['info']['year']."' tabindex='-1' readonly>"; ?> </td>
 			<td> <?php echo "<input type='text' name='type[]' value='".$theentity['info']['type']."' tabindex='-1' readonly>" ; ?> </td>
 		
 			 <?php echo "<input type='hidden' size='50' name='url[]' value='<a href=\"".$theentity['info']['url']."'>";?>
 			<td><?php echo '<a href='.$theentity['info']['url']. ' target=\"_blank\"><img src=./images/view.png /></a>';?></td>
-			<td> <?php echo "<input type='checkbox'  name='checkbox[]' value='". $j++."'<br/>";?> </td>
+			
 			<td><?php echo "<input type='hidden' name='url_id[]' value='".$theentity['url']."''>"; ?></td>
        		 
         </tr>
