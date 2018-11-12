@@ -131,7 +131,7 @@ return true;
 		    <td><textarea name="authors[]" cols="40" rows="3" tabindex='-1' readonly><?php
 		  //elegxos an iparxei to pedio author ti tha emfanisi ston pinaka
                if($length_author==0){        
-                  echo  "ΔΕΝ ΥΠΑΡΧΕΙ ΣΥΓΓΡΑΦΕΑΣ"; 
+                  echo  "UNAVAILABLE"; 
                  }   
 	          
 	          else if ($length_author==1)
