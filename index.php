@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿<link rel="stylesheet" type="text/css" href="mystyle.css">
 <script>
+=======
+﻿<!--<script>
+>>>>>>> 976b5ab25b1b7667f3067000848cdff3871202e7
 	function checkentryform() {
 		var cForm   = document.forms.search_author;
 		var errstr  = '';  
@@ -96,7 +100,7 @@
 			</table>
 			<table align= 'center' border="0" cellspacing="1" style="border-collapse: collapse; color:#000000" bordercolor="#111111" width="10%">
 	<th align='left'><BR><BR>
-	<input class="button" type='button' value='OK' name='submit_button' onclick="checkentryform();" >
+	<input class="submit" type='submit' value='OK' name='submit_button' >
 	</th>
 	
 	
