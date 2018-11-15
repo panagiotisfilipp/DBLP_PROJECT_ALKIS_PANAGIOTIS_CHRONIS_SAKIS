@@ -1,4 +1,5 @@
-﻿<--!<script>
+﻿<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script>
 	function checkentryform() {
 		var cForm   = document.forms.search_author;
 		var errstr  = '';  
@@ -18,7 +19,7 @@
 				
 			document.forms.search_author.submit();
 	}
-</script>-->
+</script>
 
 
 <html>
