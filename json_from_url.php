@@ -72,7 +72,7 @@ return true;
 	    $j=0;//orismos metablitis metrisis ton check boxes
 		
 		 echo "<b>Οι Δημοσιευσεις του συγγραφέα που εμφανίσατε είναι :</b>". $characters['result']['hits']['@sent'].'<br>';//minima pou emfanizei to sinolo ton dimosieuseon
-		 echo '<br>'."<b><u>ΟΣΑ ΠΕΔΙΑ ΕΙΝΑΙ ΜΕ ΡΟΖ ΧΡΩΜΑ ΥΠΑΡΧΟΥΝ ΗΔΗ ΣΤΗΝ ΒΑΣΗ ΣΑΣ.</b></u><br><br>";
+		
 		if(($characters['result']['hits']['@sent']==0))//elegxo tin timi tou value tou json
 		{
 			echo '<script language="javascript">alert("ΓΙΑ ΤΑ ΚΡΙΤΗΡΙΑ ΠΟΥ ΒΑΛΑΤΕ ΔΕΝ ΥΠΑΡΧΟΥΝ ΑΠΟΤΕΛΕΣΜΑΤΑ!\nΠΡΟΣΠΑΘΗΣΤΕ ΞΑΝΑ!");document.location="index.php";</script>'; 
