@@ -15,23 +15,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Website Example</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  
-
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   
   
-  
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <style>
   .fakeimg {
       height: 200px;
@@ -64,25 +57,29 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
-      <li class="nav-item">
-        <a href="" class="nav-link" data-toggle="modal" data-target="#modal_login">Είσοδος/Εγγραφή</a>
-	</li>
+      
+        
+		<?php  if (!isset($_SESSION['username'])) : ?>
+		<li class="nav-item">
+			<a href="" class="nav-link" data-toggle="modal" data-target="#modal_login">Είσοδος/Εγγραφή</a>
+	    </li>		
+		<?php endif ?>		
+	
+	
+
 	<li class="nav-item">
-        <a href="" class="nav-link" data-toggle="modal" data-target="#modal_papper">Προσθήκη</a>
-	</li>
-
-		<li>
-		<div align="center"> 
-
-
     <!-- logged in user information -->
-    <?php  if (isset($_SESSION['username'])) : ?>
-		
-		<button type="submit" class="btn btn-danger" ><a href="index.php?logout='1'" class="nav-link" d  > Logout </a></button>
+    <?php  if (isset($_SESSION['username'])) : ?>	
+		<li class="nav-item">
+			<a href="" class="nav-link" data-toggle="modal" data-target="#modal_papper">Προσθήκη</a>
+		</li>
+		<li class="nav-item">		
+			<a href="index.php?logout='1'" class="nav-link" d  > Logout </a>
+		</li>		
     	<!--<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>-->
     <?php endif ?>
-		</div>	
-		</li>
+			
+	
 		
     </ul>
   </div>  
@@ -114,11 +111,11 @@
       <hr class="d-sm-none">
     </div>
     <div class="col-sm-8">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h2>About dblp</h2>
+
+      <div ><img src="https://dblp.uni-trier.de/img/logo.320x120.png"/></div>
+      <p>This service provides open bibliographic information on major computer science journals and proceedings. dblp is a joint service of the University of Trier and Schloss Dagstuhl. For more information check out our F.A.Q.</p>
+      
       <br>
       <h2>TITLE HEADING</h2>
       <h5>Title description, Sep 2, 2017</h5>
@@ -140,17 +137,18 @@
         <!--Content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">
-                                            <span class="glyphicon glyphicon-remove"></span>
-                                        </button>
-                                        <ul class="nav nav-tabs">
-                                            <li class="active"><a data-toggle="tab" href="#login-form"> Login <span class="glyphicon glyphicon-user"></span></a></li>
-                                            <li><a data-toggle="tab" href="#registration-form"> Register <span class="glyphicon glyphicon-pencil"></span></a></li>
+                                        <ul class="nav nav-pills " role="tablist">
+
+                                            <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#login-form"> Login <span class="fas fa-user"></span></a></li>
+                                            <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#registration-form">Register<span class='fas fa-pencil-alt'></span></a></li>
                                         </ul>
+										<button type="button" class="close" data-dismiss="modal">
+													<i class="fas fa-times-circle"></i>
+										</button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="tab-content">
-                                            <div id="login-form" class="tab-pane fade in active">
+                                            <div id="login-form" class="container tab-pane active">
                                                 <form method="post" action="index.php">
                                                     <?php include('errors.php'); ?>
 													<div class="form-group">
@@ -164,7 +162,9 @@
                                                     <div class="checkbox">
                                                         <label><input type="checkbox" name="remember"> Remember me</label>
                                                     </div>
-                                                    <button type="submit" class="btn btn-default" name="login_user">Login</button>
+													<div align="center">
+                                                    <button type="submit" class="btn btn-dark" name="login_user">Login</button>
+													</div>
                                                 </form>
                                             </div>
                                             <div id="registration-form" class="tab-pane fade">
@@ -186,7 +186,9 @@
                                                         <label for="password_2">Password:</label>
                                                         <input type="password" class="form-control" id="password_2" placeholder="New password" name="password_2">
                                                     </div>
-													<button type="submit" class="btn btn-default" name="reg_user">Register</button>	
+													<div align="center">
+														<button type="submit" class="btn btn-success" name="reg_user">Register</button>	
+													</div>
                                                 </form>
                                             </div>
 
