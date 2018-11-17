@@ -70,20 +70,9 @@ return true;
        
 	    //$array_authors=array();//pinakas poy krata tous authors ana dimosieusi
 	    $j=0;//orismos metablitis metrisis ton check boxes
-		//elegxos iparjis tetoiou typou dimosieusi me basi ta arxeia pou vrethikan
-		//elegxos json
-		//foreach ($characters as $authors)
-        //      {
-    //print_r($authors);
-     //            };
-		
-		
-		
-		
-		
 		
 		 echo "<b>Οι Δημοσιευσεις του συγγραφέα που εμφανίσατε είναι :</b>". $characters['result']['hits']['@sent'].'<br>';//minima pou emfanizei to sinolo ton dimosieuseon
-		echo '<br>'."<b><u>Ενημέρωση για Δημοσιέυσεις που έχετε ήδη επιλέξει και εισάγει στην βάση σας:</b></u><br><br>";
+		 echo '<br>'."<b><u>ΟΣΑ ΠΕΔΙΑ ΕΙΝΑΙ ΜΕ ΡΟΖ ΧΡΩΜΑ ΥΠΑΡΧΟΥΝ ΗΔΗ ΣΤΗΝ ΒΑΣΗ ΣΑΣ.</b></u><br><br>";
 		if(($characters['result']['hits']['@sent']==0))//elegxo tin timi tou value tou json
 		{
 			echo '<script language="javascript">alert("ΓΙΑ ΤΑ ΚΡΙΤΗΡΙΑ ΠΟΥ ΒΑΛΑΤΕ ΔΕΝ ΥΠΑΡΧΟΥΝ ΑΠΟΤΕΛΕΣΜΑΤΑ!\nΠΡΟΣΠΑΘΗΣΤΕ ΞΑΝΑ!");document.location="index.php";</script>'; 
@@ -91,11 +80,14 @@ return true;
 				}
 
 		else
-		
+		//orismos metabliton
+		 $A_apotelesma=array();//pinakas pou bazoume apotelesmata apo query
+		 //$s="<td>ΜΗ ΕΠΙΛΕΓΜΕΝΟ</td>";//orizoume arxiki timi stin metabliti an i basi den exei times
+		  $tdstyle='background-color:white;';//αρχικοποιηση μεταβλητης
 	//trabame eggrafes apo basi
 		$query_check_paper = "SELECT * FROM papers";
         $result_id_url=$conn->query($query_check_paper) or die ('Error, query failed check_paper_in_base');
-		$stack=array();
+		//$stack=array();
 		 foreach ($characters['result']['hits']['hit'] as $theentity) :
 		  if (array_key_exists('authors',$theentity['info'])){
 			  
@@ -104,31 +96,39 @@ return true;
 		}
 		else
 		 $length_author=0;
-		//if(!isset($length_author))
-		//$length_author=0;
 		////elegxos iparjis dimosieusis stin basi
 		 $url_id_json=$theentity['url'];//anathesi timis se metabliti tou url pou diabazei apo api
-			
-		//εμφάνιση δημοσιευσεων που υπάρχουν ήδη στην βάση
+		$i=-1;//ΟΡΙΣΜΟΣ ΜΕΤΑΒΛΗΤΗΣ ΜΕΤΡΗΣΗΣ
+		//ελεγχος δημοσιευσεων της βασης μας σε σχεση με τα αρχεια που διαβαζει απο json
 		if($result_id_url){
-		$i=0;
+	
 		while($row = mysqli_fetch_array($result_id_url)){
 	    $i++;	
-	    echo "<b>".$i.".";
-			
-	     $url_id_db=$row["url_id"];
-	     $title=$row["title"];
-	     echo "<b>".$title.'<br>'."</b>";
-	     $len_url_id=count($url_id_db);
+	    $A_apotelesma[$i]['url_id'] = $row['url_id'];
+	
+                                                         }
+	
+	   $database_array=array();//dilosi pinaka pou bazoume ta apotelesmata toy erotimatos tis database
+	 foreach($A_apotelesma as $in => $value){
 		
+		array_push($database_array,$value['url_id']);//βαζω τις τιμες του ερωτήματος στον πινακα
+	
+		if(in_array( $url_id_json,$database_array))//ελέγχω αν υπάρχουν οι τιμες του json στον πίνακα με τιμές βάσης
+		 //$s="<td>ΕΠΙΛΕΓΜΕΝΟ</td>";
+		 $tdstyle='background-color:#f2b9c5;';
+		else
+		 //$s="<td>ΜΗ ΕΠΙΛΕΓΜΕΝΟ</td>";
+		 $tdstyle='background-color:white;';
+	 }
 	}
-}
+	
+		
 	
 ?>
 
    
 			<tr>
-			<td> <?php echo "<input type='checkbox' cols='2%' name='checkbox[]' value='". $j++."'<br/>";?> </td>
+			<td style="<?php echo $tdstyle;?>"><?php echo "<input type='checkbox' cols='2%' name='checkbox[]' value='". $j++."'<br/>";?> </td>
 		    <td><textarea name="authors[]" cols='40%'                   rows="3" tabindex='-1' readonly><?php
 		  //elegxos an iparxei to pedio author ti tha emfanisi ston pinaka
                if($length_author==0){        
