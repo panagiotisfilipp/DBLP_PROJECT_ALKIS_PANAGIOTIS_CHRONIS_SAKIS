@@ -29,14 +29,16 @@ while($row = mysqli_fetch_array($result_id_url)) {
 		
 	}
 	 
-	$insert_paper_query= " INSERT INTO papers
-					           SET 
-							authors='".$_POST['authors'][$j]."',
-							title='".$_POST['title'][$j]."',
-							year='".$_POST['year'][$j]."',
-							type='".$_POST['type'][$j]."',
-							url_id= '".$_POST['url_id'][$j]."',
-							url='".$_POST['url'][$j]."'";														
+	// escape variables for security
+$authors_escape = mysqli_real_escape_string($conn, $_POST['authors'][$j]);
+$title_escape = mysqli_real_escape_string($conn, $_POST['title'][$j]);
+$year_escape = mysqli_real_escape_string($conn, $_POST['year'][$j]);
+$type_escape = mysqli_real_escape_string($conn, $_POST['type'][$j]);
+$url_id_escape = mysqli_real_escape_string($conn, $_POST['url_id'][$j]);
+$url_escape = mysqli_real_escape_string($conn, $_POST['url'][$j]);
+
+$insert_paper_query="INSERT INTO papers (authors, title, year,type,url_id,url)
+VALUES ('$authors_escape', '$title_escape', '$year_escape','$type_escape','$url_id_escape','$url_escape')";														
  
 
 	$insert_paper=$conn->query($insert_paper_query) or die('Error_query,failed_insert_paper'); 
