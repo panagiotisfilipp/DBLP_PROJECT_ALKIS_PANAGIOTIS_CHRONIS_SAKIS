@@ -90,7 +90,7 @@ return true;
 		//$stack=array();
 		 foreach ($characters['result']['hits']['hit'] as $theentity) :
 		  if (array_key_exists('authors',$theentity['info'])){
-			  
+			   $s=""; 
 		 $length_author = count($theentity['info']['authors']['author']);//mikos pinaka author
 		
 		}
