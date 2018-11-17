@@ -1,29 +1,6 @@
-<<<<<<< HEAD
+
 ﻿<link rel="stylesheet" type="text/css" href="mystyle.css">
-<script>
-=======
-﻿<!--<script>
->>>>>>> 976b5ab25b1b7667f3067000848cdff3871202e7
-	function checkentryform() {
-		var cForm   = document.forms.search_author;
-		var errstr  = '';  
-		
-		
-		<!-- search_author: Ελέγχει αν το πεδίο είναι null  
-		if ( cForm.search_author.value==''){
-			errstr = errstr+'Το πεδίο συγγραφέας δεν μπορεί να είναι κενό.\n';
-			cForm.search_author.style.backgroundColor="#ff6347";
-		}
-	
-		
-		if (errstr.length>0)
-			alert(errstr);
-		else
-		
-				
-			document.forms.search_author.submit();
-	}
-</script>
+
 
 
 <html>
