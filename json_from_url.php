@@ -130,7 +130,7 @@ return true;
    
 			<tr>
 			<td><?php echo "<input type='checkbox'  $s  cols='2%' name='checkbox[]' value='". $j++."'<br/>";?> </td>
-		    <td><textarea name="authors[]" cols='40%'                   rows="3" tabindex='-1' readonly><?php
+		    <td><textarea name="authors[]" cols='40%' rows="3" tabindex='-1' readonly><?php
 		  //elegxos an iparxei to pedio author ti tha emfanisi ston pinaka
                if($length_author==0){        
                   echo  "UNAVAILABLE"; 
