@@ -83,7 +83,7 @@ return true;
 		//orismos metabliton
 		 $A_apotelesma=array();//pinakas pou bazoume apotelesmata apo query
 		 //$s="<td>ΜΗ ΕΠΙΛΕΓΜΕΝΟ</td>";//orizoume arxiki timi stin metabliti an i basi den exei times
-		  $tdstyle='background-color:white;';//αρχικοποιηση μεταβλητης
+		  //$tdstyle='background-color:white;';//αρχικοποιηση μεταβλητης
 	//trabame eggrafes apo basi
 		$query_check_paper = "SELECT * FROM papers";
         $result_id_url=$conn->query($query_check_paper) or die ('Error, query failed check_paper_in_base');
@@ -114,11 +114,12 @@ return true;
 		array_push($database_array,$value['url_id']);//βαζω τις τιμες του ερωτήματος στον πινακα
 	
 		if(in_array( $url_id_json,$database_array))//ελέγχω αν υπάρχουν οι τιμες του json στον πίνακα με τιμές βάσης
-		 //$s="<td>ΕΠΙΛΕΓΜΕΝΟ</td>";
-		 $tdstyle='background-color:#f2b9c5;';
+		 
+		 //$tdstyle='background-color:#f2b9c5;';
+		  $s="disabled";//απενεργοποιειται το checkbox
 		else
-		 //$s="<td>ΜΗ ΕΠΙΛΕΓΜΕΝΟ</td>";
-		 $tdstyle='background-color:white;';
+		 //$tdstyle='background-color:white;';
+	     $s=" ";//ενεργοποιειται το checkbox
 	 }
 	}
 	
@@ -128,7 +129,7 @@ return true;
 
    
 			<tr>
-			<td style="<?php echo $tdstyle;?>"><?php echo "<input type='checkbox' cols='2%' name='checkbox[]' value='". $j++."'<br/>";?> </td>
+			<td><?php echo "<input type='checkbox'  $s  cols='2%' name='checkbox[]' value='". $j++."'<br/>";?> </td>
 		    <td><textarea name="authors[]" cols='40%'                   rows="3" tabindex='-1' readonly><?php
 		  //elegxos an iparxei to pedio author ti tha emfanisi ston pinaka
                if($length_author==0){        
