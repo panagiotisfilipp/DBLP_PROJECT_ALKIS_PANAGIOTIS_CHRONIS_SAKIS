@@ -1,7 +1,7 @@
- -- Creation of the database schema for the project
+
 CREATE SCHEMA `m_102` ;
 
---Creation of the papers table
+
 CREATE TABLE `m_102`.`papers` (
   `url_id` VARCHAR(45) NOT NULL,
   `authors` VARCHAR(500) NOT NULL,
@@ -17,7 +17,7 @@ COLLATE = utf8_unicode_ci;
   
 
 
-  --Creation of the api users table, do not use script to fill user_id field and role they are auto generated
+  
 CREATE TABLE `m_102`.`users` (
   `user_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
@@ -33,14 +33,16 @@ COLLATE = utf8_unicode_ci;
  
  
 
---Creation of the junction table for the many to many relationship
+
 CREATE TABLE `m_102`.`downloads` (
   `url_id` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
+  `notes` varchar(255) NULL,
   PRIMARY KEY (`url_id`,`user_id`),
   CONSTRAINT `link_to_papers` FOREIGN KEY (`url_id`) REFERENCES `papers` (`url_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `link_to_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE) 
 ENGINE=InnoDB 
 DEFAULT CHARSET=utf8
 COLLATE=utf8_unicode_ci;
+
 
