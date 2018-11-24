@@ -1,0 +1,14 @@
+
+
+body {
+    <!-- background-color: LightGray; -->
+	background-color: lightblue;
+	background-image: url("../images/back-4.jpg");
+	
+	
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
