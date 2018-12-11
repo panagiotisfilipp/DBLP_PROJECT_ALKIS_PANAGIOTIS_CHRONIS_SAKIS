@@ -65,8 +65,8 @@ session_start();
       <br>		
       </p>
 	  <p align="justify">
-		Ο Παναγιώτης Φιλιππάκης είναι προγραμματιστής και μεταπτυχιακός φοιτητής του Τμήματος Μηχανικών Πληροφορικής του ΑΤΕΙ Θεσσαλονίκης στις «Ευφυείς Τεχνολογίες Διαδικτύου». Ειδικεύεται στο Software Developing , Back-End Developing και στην ανάπτυξη δικτυακών εφαρμογών με χρήση τεχνολογιών php, javascript, html. Εργάζεται σαν μόνιμος Αξιωματικός της Πολεμικής Αεροπορίας και κατέχει την θέση του Προϊστάμενου Εκμετάλλευσης στο Τμήμα Πληροφορικής της 350 Πτέρυγας Κατευθυνόμενων Βλημάτων. Έχει ασχοληθεί σε μεγάλο βαθμό με την Διαχείριση Δικτύων (Windows Administrator) και την ασφάλεια αυτών.
-		www.linkedin.com/in/panagiotis-filippakis-b761ab95		
+		Ο Τζιώρας Αλκιβιάδης είναι προγραμματιστής και μεταπτυχιακός φοιτητής του Τμήματος Μηχανικών Πληροφορικής του ΑΤΕΙ Θεσσαλονίκης στις «Ευφυείς Τεχνολογίες Διαδικτύου». Ειδικεύεται στην κατασκευή ιστοσελίδων, e-shop και στην ανάπτυξη δικτυακών εφαρμογών με χρήση τεχνολογιών php, javascript, html. Είναι ιδιοκτήτης ατομικής επιχείρησης κατασκευής ιστοσελίδων  "Click2web" και ιδιοκτήτης της εταιρίας "Μηχανογραφική Εξυπηρέτηση Κοινοχρήστων".
+				
      </p>	
     </div>
     <div align="center" class="col-sm-6">
@@ -87,10 +87,10 @@ session_start();
 </div>
 <div class="row">
 <div align="center" class="col-sm-6">
-<a href="https://www.linkedin.com/in/panagiotis-filippakis-b761ab95/" > <img src="./images/linkedin1.png"/>LinkedIn</i></a>
+<a href="https://www.linkedin.com/in/alkis-tzioras" target="_blank"> <img src="./images/linkedin1.png"/>LinkedIn</i></a>
 </div>
 <div align="center" class="col-sm-6">
-<a href="https://www.linkedin.com/in/panagiotis-filippakis-b761ab95/" > <img src="./images/linkedin1.png"/>LinkedIn</i></a>
+<a href="https://www.linkedin.com/in/panagiotis-filippakis-b761ab95/" target="_blank"> <img src="./images/linkedin1.png"/>LinkedIn</i></a>
 </div>
 </div>
 <br><br><br>
@@ -127,10 +127,10 @@ session_start();
 	</div>
 <div class="row">
 <div align="center" class="col-sm-6">
-	<a href="https://www.linkedin.com/in/vaskos-athanasios/" > <img src="./images/linkedin1.png"/>LinkedIn</i></a>
+	<a href="https://www.linkedin.com/in/vaskos-athanasios/" target="_blank"> <img src="./images/linkedin1.png"/>LinkedIn</i></a>
 </div>
 <div align="center" class="col-sm-6">
-		<a href="https://www.linkedin.com/in/chronis-koukaras-36978485/" > <img src="./images/linkedin1.png"/>LinkedIn</i></a>
+		<a href="https://www.linkedin.com/in/chronis-koukaras-36978485/" target="_blank"> <img src="./images/linkedin1.png"/>LinkedIn</i></a>
 </div>
 </div>	
  </div>
