@@ -13,26 +13,45 @@
       
 	 
         <ul class="navbar-nav ">
-          <li class="nav-item active">
+          
+	<?php  if (!isset($_SESSION['username'])) { ?>	
+	     <li class="nav-item active">
             <a class="nav-link"   href="index.php">  <i class="fa fa-home" aria-hidden="true"></i> Αρχική</a>
           </li>
-	<?php  if (!isset($_SESSION['username'])) { ?>		  
           <li class="nav-item ">
             <a class="nav-link"   href="index_guest.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Συγγραμμάτων</a>
           </li>
+          		<li class="nav-item">
+            <a class="nav-link"   href="contact_guest.php">  <i class="fa fa-envelope" aria-hidden="true"></i> Επικοινωνία</a>
+          </li>
+          	
 	<?php }   ?>		  
 		  <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='1' ) { ?>
-          <li class="nav-item ">
-            <a class="nav-link"   href="diaxeirisi_sug.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Συγγραμμάτων</a>
-          </li><?php }?>
-		  <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='0' ) { ?>
-          <li class="nav-item ">
-            <a class="nav-link"   href="diaxeirisi_xrist.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Χρηστών</a>
+		   <li class="nav-item active">
+            <a class="nav-link"   href="index_reg.php">  <i class="fa fa-home" aria-hidden="true"></i> Αρχική</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link"   href="diaxeirisi_rss.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση RSS</a>
+		   <a class="nav-link"   href="index_login.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Συγγραμμάτων</a>
+		   </li>
+            <a class="nav-link"   href="diaxeirisi_sug.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Συγγραμμάτων</a>
+          </li>
+          		<li class="nav-item">
+            <a class="nav-link"   href="contact.php">  <i class="fa fa-envelope" aria-hidden="true"></i> Επικοινωνία</a>
+          </li>
+          <?php }?>
+		  <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='0' ) { ?>
+		  <li class="nav-item active">
+            <a class="nav-link"   href="index_admin.php">  <i class="fa fa-home" aria-hidden="true"></i> Αρχική</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link"   href="preview_users.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Χρηστών</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link"   href="preview_rss.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση RSS</a>
           </li>	
-		<?php }?>		  
+		<?php }?>
+			
+	
 	<?php  if (!isset($_SESSION['username'])) { ?>
 		<li class="nav-item">
 			<a href="./log_reg_modal.php" class="nav-link" data-toggle="modal" data-target="#modal_login"><i class="fas fa-user"></i>  Είσοδος/Εγγραφή</a>
@@ -43,7 +62,7 @@
 		</li>
 		
 	<?php  }?>
-	
+
 	
         </ul>
     </div>

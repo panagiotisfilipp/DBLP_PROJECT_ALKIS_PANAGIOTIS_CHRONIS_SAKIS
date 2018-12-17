@@ -14,7 +14,7 @@
      
 
 
-<form name="search_author" method="post" action="guest_search_json.php" enctype="multipart/form-data">
+<form name="search_author" method="post" action="login_search_json.php" enctype="multipart/form-data">
 	<table align= 'center' border="0" cellspacing="1" style="border-collapse: collapse; color:#000000" bordercolor="#111111" width="auto">
 
 	<tr>
@@ -76,7 +76,8 @@
 			</table>
 			<table align= 'center' border="0" cellspacing="1" style="border-collapse: collapse; color:#000000" bordercolor="#111111" width="10%">
 	<th align='left'><BR><BR>
-		<button type="submit" class="btn btn-warning"><i class="fas fa-search"aria-hidden="true"></i> <b>Αναζήτηση</b></button>
+	
+	<button type="submit" class="btn btn-warning"><i class="fas fa-search"aria-hidden="true"></i> <b>Αναζήτηση</b></button>
 	</th>
 	
 	

@@ -1,3 +1,16 @@
+<?php 
+session_start();
+
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+	unset($_SESSION['success']);
+	unset($_SESSION['user_id']);
+	unset($_SESSION['role']);
+	
+  	header("location: index.php");
+  }
+?>
 
 
 <!DOCTYPE html>
@@ -5,15 +18,23 @@
 <html lang="en">
 
 <head>
-    <title>Call for papers</title>
-	<link rel="shortcut icon" type="image/x-icon" href="logo2.ico" />     
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Αναζήτηση Συγγραμμάτων</title>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="logo2.ico" />     
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	
+
 
    <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -25,7 +46,7 @@
 	<link rel="stylesheet" href="css/main.css">  
     <script src="./js_async_calls/login.js"></script>
     <script src="./js_async_calls/register.js"></script>
-	<script src="./js_async_calls/counter.js"></script>
+    <script src="./js_async_calls/counter.js"></script>		
     <script src="./myScript.js"></script>
 
 <style>
@@ -37,52 +58,43 @@
 </head>
 <body>
 
+
 <button onclick="topFunction()" id="myBtn" title="Go to top" style="border-radius: 4px;padding: 15px;cursor: pointer;color: white;background-color: #96f5f3;outline: none;border: none;display: none;position: fixed;bottom: 20px;right: 30px;z-index: 99;font-size: 18px;">Top</button>
 
+ 
 
 <!--Navbar -->
-<?php include('nav.php');?>
+<?php include ('nav.php'); ?>
 <!--Navbar end-->
+
+        
+<!--  ΑΠΟ ΕΔΩ ΚΑΙ ΚΑΤΩ ΝΑ ΒΑΛΩ ΛΕΙΤΟΥΡΓΙΕΣ ΚΟΥΜΠΙΩΝ  -->	
+		
+		
+
 <div class="container" style="margin-top:70px" >
   <div class="row">
-<div align="center" class="col-sm-9">
-<p>
-<h3><b>Εφαρμογή αναζήτησης και αποθήκευσης συγγραμμάτων</b></h3>
-<br><br><br>
-
-<div> <img src="images/banner_paper.jpg" class="img-fluid" alt="ΑΤΕΙ ΘΕΣΣΑΛΟΝΙΚΗΣ"></div> <br><br>
-<div align="justify">Η παρούσα εφαρμογή δίνει την δυνατότητα στο χρήστη να αναζητήσει επιστημονικά συγγράμματα που είναι καταχωρημένα στην βιβλιοθήκη του dblp.uni-trier.de.<br>
-Δίνεται η δυνατότητα στο χρήστη που θα εγγραφεί στην υπηρεσία να αναζητήσει, να δημιουργήσει & να διαχειριστεί την προσωπική του βιβλιοθήκη συγγραμμάτων.</div>
-</p>	
-</div>
-<div align="center" class="col-sm-3" style="margin-top:20px">
-<p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><div class="shadow p-3 mb-5 bg-white rounded"><?php include ('rss_show.php'); ?></div></p>
-</div> 
-</div>
-</div>
- </div>
-
-
-<div class="container" style="margin-top:20px" >
-  <div class="row">
-    <div align="center" class="col-sm-9">
-	  	 
+    <div align="center" class="col-sm-12">
+	  <p>
+    
+	  <?php include ('login_user.php');?>
+    </p>	 
     </div>
- 
-   </div>
-</div>
+	</div>
+ </div>
+	
 
 
- <?php include ('footer.php');?> 
-  
-<!-- Login Form Call -->
+<!--<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>-->
 
-<?php include ('modal.php'); ?> 
+ <?php include ('footer.php');?>
+
+<?php include ('modal.php');?>
 
 
-
-
-
+               
 
 <div class="text-center">
     

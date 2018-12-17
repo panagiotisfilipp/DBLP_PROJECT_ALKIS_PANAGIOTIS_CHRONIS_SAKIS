@@ -31,7 +31,14 @@
         <div class="row">
           <div class="col-md-12">
             <ul>
-              <li><a href="index.php">Αρχική Σελίδα</a></li>
+                <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='1' ) { ?>
+		           <li><a href="index_reg.php">Αρχική Σελίδα</a></li><?php } ?>
+		  
+		       <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='0' ) { ?>
+		           <li><a href="index_admin.php">Αρχική Σελίδα</a></li><?php } ?>
+		    <?php  if (!isset($_SESSION['username'])) { ?>
+		   <li><a href="index.php">Αρχική Σελίδα</a></li><?php } ?>
+              
               <li class="hidden">/</li>
               <li><a href="about.php">Ποιοι είμαστε</a></li>
               <li class="hidden">/</li>

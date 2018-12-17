@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // initializing variables
@@ -35,7 +36,13 @@ if (isset($_POST['name'])) {
 	  $_SESSION['role'] = $row["role"];
 	  //$response_array = 'success';
 	  //echo $response_array;
-  	  header('location: index.php');
+	  
+	  if ($_SESSION['role'] == "0"){
+  	     header('location: index_admin.php');}
+  	  if ($_SESSION['role'] == "1"){ 
+  	      header('location: index_reg.php');}
+  	      
+  	      
   	}else {
 		
 		$_SESSION['success'] = "Error";
@@ -45,5 +52,5 @@ if (isset($_POST['name'])) {
   	}
   }
 }
-
+ob_end_flush();
 ?>

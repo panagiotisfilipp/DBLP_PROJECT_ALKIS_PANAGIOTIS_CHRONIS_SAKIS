@@ -44,6 +44,7 @@
   <div class="row">
 <div align="center" class="col-sm-12">
     <h3><b>Αποτελέσματα Αναζήτησης Συγγραμμάτων</b></h3><br />
+    <div class="shadow p-3 mb-5 bg-white rounded">
 <div class="table-responsive">
        <table class="table table-striped table-bordered">
 	<thead class=thead-dark>
@@ -136,7 +137,7 @@
 
 	</tbody>
 		
-</table>
+</table></div>
   </div>
  </div>
 </div>
