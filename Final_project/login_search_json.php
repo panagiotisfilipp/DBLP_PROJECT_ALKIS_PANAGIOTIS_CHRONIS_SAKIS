@@ -56,8 +56,11 @@ return true;
 
 <style>
   .navbar-custom {
-    background-color:#7dc476;
-	<!--color:	#fff400;-->
+    background-color:#7dc476;}
+
+.navbar-custom2 {
+    background-color:#DBEBC7;}
+.button2 { position: fixed; bottom: 0px; left: 50px; }
 	
   </style>
 
@@ -74,8 +77,10 @@ return true;
 <div class="container" style="margin-top:70px" >
   <div class="row">
 <div align="center" class="col-sm-12">
+    
 <form name="paper_display" method="post" action="checkbox_value.php" enctype="multipart/form-data">
     <h3><b>Αποτελέσματα Αναζήτησης Συγγραμμάτων</b></h3><br />
+     <div class="shadow p-3 mb-5 navbar-custom2 rounded">
 <div class="table-responsive">
        <table class="table table-striped table-bordered">
 	<thead class=thead-dark>
@@ -247,7 +252,9 @@ return true;
 	</tbody>
 		
 			<td  align='center' colspan='5'><br>
-				<input style="color:red" type='submit' value='ΕΙΣΑΓΩΓΗ ΣΤΗ ΒΑΣΗ' name='submit' onclick="return checkentryform();" >
+				<button type="submit" class="button2 btn btn-warning" onclick="return checkentryform();"><i class="fas fa-database"aria-hidden="true"></i> <b>ΕΙΣΑΓΩΓΗ ΣΤΗ ΒΑΣΗ</b></button>
+			
+				
 			</td>
 		
 </table>

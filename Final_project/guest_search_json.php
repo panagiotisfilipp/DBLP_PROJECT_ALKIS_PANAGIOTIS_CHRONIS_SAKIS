@@ -26,8 +26,10 @@
 
 <style>
   .navbar-custom {
-    background-color:#7dc476;
-	<!--color:	#fff400;-->
+    background-color:#7dc476;}
+
+  .navbar-custom2 {
+    background-color:#DBEBC7;}
 	
   </style>
 
@@ -44,7 +46,7 @@
   <div class="row">
 <div align="center" class="col-sm-12">
     <h3><b>Αποτελέσματα Αναζήτησης Συγγραμμάτων</b></h3><br />
-    <div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="shadow p-3 mb-5 navbar-custom2 rounded">
 <div class="table-responsive">
        <table class="table table-striped table-bordered">
 	<thead class=thead-dark>

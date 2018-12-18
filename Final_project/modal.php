@@ -26,11 +26,15 @@
                                                         <label for="name"> Όνομα χρήστη: </label>
                                                         <input type="text" class="form-control" id="name" placeholder="Εισάγετε το όνομα χρήστη" name="name" required>
                                                     </div>												
+                                                    
+                                                    
                                                     <div class="form-group">
-                                                        <label for="password"> Κωδικός: </label>
-                                                        <input type="password" class="form-control" id="pswd" placeholder="Εισάγετε τον κωδικό χρήστη" name="pswd" required>
-                                                        <i class="fa fa-eye" onclick="myFunction_login()"></i>
-                                                    </div>													
+			    <label for="password">Κωδικός</label>
+			    <input class="form-control" id="pswd" name="pswd" placeholder="Εισάγετε τον κωδικό χρήστη" required 
+			    	data-toggle="password">
+			</div>
+                                                    
+                                                    
 
 													<div align="center">
 														<input type="submit"   class="btn btn-dark" name="login_user" id="btn_login" value="Είσοδος"/>
@@ -49,16 +53,20 @@
                                                         <label for="email">E-mail:</label>
                                                         <input type="email" class="form-control" id="email" placeholder="Εισάγετε την ηλεκτρονική σας διεύθυνση (email)" name="email" required>
                                                     </div>	
-													<div class="form-group">
-                                                        <label for="password_1"> Κωδικός: </label>
-                                                        <input type="password" class="form-control" id="password_1" placeholder="Δημιουργία νέου κωδικού"  name="password_1"  required >
-                                                       <i class="fa fa-eye" onclick="myFunction1()"></i> 
-                                                    </div>
-                                                    <div class="form-group">													
-                                                        <label for="password_2"> Επαλήθευση Κωδικού: </label>
-                                                        <input type="password" class="form-control" id="password_2" placeholder="Επαλήθευση νέου κωδικού" name="password_2" required >
-                                                        <i class="fa fa-eye" onclick="myFunction2()"></i>
-                                                    </div>
+                                                    
+                                                    <div class="form-group">
+			    <label for="password">Κωδικός:</label>
+			    <input class="form-control" id="password_1" name="password_1" placeholder="Δημιουργία νέου κωδικού" required 
+			    	data-toggle="password">
+			</div>
+			<div class="form-group">
+			    <label for="password">Επαλήθευση Κωδικού:</label>
+			    <input class="form-control" id="password_2" name="password_2" placeholder="Επαλήθευση νέου κωδικού" required 
+			    	data-toggle="password">
+			</div>
+                                                    
+                                                    
+					
 													<div id="results"></div>
 													<div align="center" id="register_div" >
 														<input type="submit"  class="btn btn-success" name="reg_user" id="btn_register" value="Εγγραφή" />	
@@ -73,6 +81,7 @@
 	</div>
 </div>	
 
+<script src="./js_async_calls/bootstrap-password-toggler.js" type="text/javascript"></script>
 <script>
 function myFunction_login() {
   var x = document.getElementById("pswd");
