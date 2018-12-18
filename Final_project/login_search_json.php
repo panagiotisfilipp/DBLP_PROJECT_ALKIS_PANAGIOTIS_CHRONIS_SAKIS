@@ -81,6 +81,7 @@ return true;
 	<thead class=thead-dark>
 	            <th width='1%'>Επιλογή</th>
 				<th>Τίτλος - Συγγραφείς</th>
+				
 				<th>Τύπος</th>
 				<th>Έτος</th>
 				<th>URL</th>
@@ -91,8 +92,7 @@ return true;
 <?php
 //sessions//
 
-            
-       
+        
         
 		$search_author=$_POST['search_author'];//metabliti author apo post
 		$search_type=$_POST['search_type'];//metabliti type apo post
@@ -136,10 +136,11 @@ return true;
 		  if (array_key_exists('authors',$theentity['info'])){
 			  $s="";  
 		 $length_author = count($theentity['info']['authors']['author']);//mikos pinaka author
-		
+		     
 		}
 		else
 		 $length_author=0;
+		 
 		////elegxos iparjis dimosieusis stin basi
 		 $url_id_json=$theentity['url'];//anathesi timis se metabliti tou url pou diabazei apo api
 		$i=-1;//ΟΡΙΣΜΟΣ ΜΕΤΑΒΛΗΤΗΣ ΜΕΤΡΗΣΗΣ
@@ -167,39 +168,65 @@ return true;
 	 }
 	}
 	
-		
+	
 	
 ?>
 
    
 			<tr>
 			<td align='center'><?php echo "<input type='checkbox'  $s  name='checkbox[]' value='". $j++."'<br/>";?> </td>
-		    <td><?php  echo "<input type='hidden'  size='150%'  name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>"; echo "<b>".$theentity['info']['title'] . "</b><br><i>" . $syn . "</i>"; ?>
-		   <textarea name="authors[]" cols='40%' rows="3" tabindex='-1' style="display:none" readonly>
-           
-			<?php 
-			    $syn = "";
+		    <td><?php 
+		       
+		      echo "<input type='hidden'  size='150%'  name='title[]' value='".$theentity['info']['title']."' tabindex='-1' readonly>"; echo "<b>".$theentity['info']['title'] . "</b><br>"; ?>
+		      <?php 
+			     $syn = "";
 			    if($length_author==0){        
-                  
-                 // echo  "UNAVAILABLE";
+                 
+                 
                   $syn = "UNAVAILABLE";
                  }   
 	          
 	          else if ($length_author==1)
-	          {   //$syn = "";
-	            //  echo $theentity['info']['authors']['author'] ;
+	          {  
+	           
 	              $syn = $theentity['info']['authors']['author'];
 	          }
 	          
 	          else{ 
-	              //$syn = "";
+	             
 	          for($i=0;$i<$length_author;$i++){
-	          // echo $theentity['info']['authors']['author'][$i].',';
+	         
 	           $syn .= $theentity['info']['authors']['author'][$i].',';
 			}
 		}
 	             echo "<i>" . $syn . "</i>";                              
-	                               ?></textarea><?php //echo "<i>" . $syn . "</i>";?></td>
+	                               ?>
+		 </td>
+			<td style="display:none" ><textarea name="authors[]" cols='40%' rows="3" tabindex='-1'  readonly style="display:none">
+          <?php 
+			    
+			    if($length_author==0){        
+                 
+                 
+                 echo "UNAVAILABLE";
+                 }   
+	          
+	          else if ($length_author==1)
+	          {  
+	           
+	              echo $theentity['info']['authors']['author'];
+	          }
+	          
+	          else{ 
+	             
+	          for($i=0;$i<$length_author;$i++){
+	         
+	           echo $theentity['info']['authors']['author'][$i].',';
+			}
+		}
+	                                       
+	                               ?>
+			</textarea></td>
             <td> <?php echo "<input type='hidden' size='15%'name='type[]' value='".$theentity['info']['type']."' tabindex='-1' readonly>"; 
             echo $theentity['info']['type']; ?> </td>
 			<td> <?php echo "<input type='hidden' size='5%' name='year[]' value='".$theentity['info']['year']."' tabindex='-1' readonly>"; 
