@@ -55,7 +55,7 @@ include('lock.php');
 				<th>Τίτλος</th>
 				<th>Περιγραφή</th>
 				<th>Link</th>
-				<th colspan="2">Επεξεργασία</th>
+				<th colspan="2">Ενέργειες</th>
 		
 			</thead>
 			<tbody>

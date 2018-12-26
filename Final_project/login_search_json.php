@@ -1,5 +1,4 @@
 <?php 
- 
 include ('lock.php');
 ?>
 
@@ -238,7 +237,7 @@ return true;
 			     echo $theentity['info']['year'];?> </td>
 			
 		
-			 <?php echo "<input type='hidden' size='5%' name='url[]' value='<a href=\"".$theentity['info']['url']."'>";?>
+			 <?php echo "<input type='hidden' size='5%' name='url[]' value='".$theentity['info']['url']."'>";?>
 			 <td><?php echo '<a href='.$theentity['info']['url']. ' target=\"_blank\" class="btn btn-primary"><span class="fab fa-telegram-plane"></span></a>';?></td>
 			
 			
