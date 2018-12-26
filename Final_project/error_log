@@ -2491,3 +2491,15 @@ Module compiled with module API=20100525
 PHP    compiled with module API=20151012
 These options need to match
  in Unknown on line 0
+[26-Dec-2018 05:05:55 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:06:04 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:06:12 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:06:25 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:07:00 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:07:19 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:07:38 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:07:42 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:07:55 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:08:01 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/config.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:41:10 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/insert_paper.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3
+[26-Dec-2018 05:42:17 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/alkibiad/dblp.click2web.gr/insert_paper.php:1) in /home4/alkibiad/dblp.click2web.gr/lock.php on line 3

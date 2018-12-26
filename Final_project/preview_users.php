@@ -53,9 +53,9 @@ include('lock.php');
        <table class="table table-striped table-bordered">
 	<thead class=thead-dark>
 				<th>Όνομα Χρήστη</th>
-				<th>Κωδικός Χρήστη</th>
+				
 				<th>Email</th>
-				<th colspan="2">Επεξεργασία</th>
+				<th colspan="2">Ενέργειες</th>
 		
 			</thead>
 			<tbody>
@@ -73,7 +73,7 @@ if ($result)
 		$i++;
 		$A_apotelesma[$i]['user_id'] = $row['user_id'];
 		$A_apotelesma[$i]['username'] = $row['username'];
-		$A_apotelesma[$i]['password'] = $row['password'];
+		
 		$A_apotelesma[$i]['email'] = $row['email'];
 		
 	}
@@ -89,7 +89,7 @@ if(is_array($A_apotelesma))
 	{
 		echo "<tr class='info'>
 				  <td>".$value['username']."</td>
-				   <td>".$value['password']."</td>
+				  
 				  <td>".$value['email']."</td>
 					  
 				  <td>

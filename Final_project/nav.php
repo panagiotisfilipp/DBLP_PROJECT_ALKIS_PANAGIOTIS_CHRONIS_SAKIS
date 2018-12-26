@@ -42,9 +42,11 @@
           <li class="nav-item ">
 		   <a class="nav-link"   href="index_login.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Συγγραμμάτων</a>
 		   </li>
-            <a class="nav-link"   href="diaxeirisi_sug.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Συγγραμμάτων</a>
+            <a class="nav-link"   href="diax_login.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Συγγραμμάτων</a>
           </li>
-          		<li class="nav-item">
+		   	 
+	  
+          <li class="nav-item">
             <a class="nav-link"   href="contact_reg.php">  <i class="fa fa-envelope" aria-hidden="true"></i> Επικοινωνία</a>
           </li>
           <?php }?>
@@ -69,12 +71,37 @@
 		<li><a data-toggle="modal" href="#logout" id="modellink" class="nav-link"><span class="fas fa-power-off" class="label label-info"></span> Αποσύνδεση (<script>start_countdown();</script>
 			<span id="countdown"></span> )</a>
 		</li>
-		
+				
 	<?php  }?>
-
-	
         </ul>
     </div>
+	<?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='1' ) { ?>
+	<ul class="navbar-nav "  style="margin-right:300px">
+	<div class="collapse navbar-collapse" id="collapse_target">	
+	<!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" style="color: white !important;" href="#" id="navbardrop" data-toggle="dropdown">
+       <i class="fas fa-user"></i> <?php echo $_SESSION['username']; ?>
+      </a>
+      <div class="dropdown-menu">
+       <a data-target="#changepass" href="" data-toggle="modal" >Aλλαγή Συνθηματικού</a>
+      </div>
+    </li> </div></ul><?php }?>
+    
+    <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='0' ) { ?>
+	<ul class="navbar-nav "  style="margin-right:300px">
+	<div class="collapse navbar-collapse" id="collapse_target">	
+	<!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" style="color: white !important;" href="#" id="navbardrop" data-toggle="dropdown">
+       <i class="fas fa-user"></i> <?php echo $_SESSION['username']; ?>
+      </a>
+      <div class="dropdown-menu">
+       <a data-target="#changepass" href="" data-toggle="modal" >Aλλαγή Συνθηματικού</a>
+      </div>
+    </li> </div></ul><?php }?>
+	
+	
 </nav>	
 <!-- Modal Logout-->
          
@@ -97,3 +124,4 @@
     </div>
   </div>
 </div>  
+
