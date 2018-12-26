@@ -1,4 +1,6 @@
+
 <script src="bootstrap-password-toggler.min.js"></script>
+
 
 <nav class="navbar sticky-top  navbar-expand-sm  navbar-dark  navbar-custom">  
 	   
@@ -12,8 +14,8 @@
         <a class="navbar-brand" href="index.php">
 		   <img src="images/logo2.png" alt="nav-logo"></a>
       
-	 
-        <ul class="navbar-nav ">
+
+        <ul class="navbar-nav">
           
 	<?php  if (!isset($_SESSION['username'])) { ?>	
 	     <li class="nav-item active">
@@ -22,11 +24,17 @@
           <li class="nav-item ">
             <a class="nav-link"   href="index_guest.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Συγγραμμάτων</a>
           </li>
-          		<li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link"   href="contact_guest.php">  <i class="fa fa-envelope" aria-hidden="true"></i> Επικοινωνία</a>
           </li>
-          	
-	<?php }   ?>		  
+		  <li class="nav-item">
+            <a class="nav-link "   href="https://docs.google.com/forms/d/1ZqLOwAQ-QRyXYbc-teXJnRO_VpSc8Lu0kbHQxitGF_8/edit" target="_blank"> <i class="far fa-list-alt" aria-hidden="true"></i> Η γνώμη σας μετράει!</a>
+          </li>
+		  
+		  
+
+      	
+	<?php }?>		  
 		  <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='1' ) { ?>
 		   <li class="nav-item active">
             <a class="nav-link"   href="index_reg.php">  <i class="fa fa-home" aria-hidden="true"></i> Αρχική</a>
