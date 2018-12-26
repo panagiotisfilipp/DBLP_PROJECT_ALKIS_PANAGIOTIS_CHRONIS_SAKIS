@@ -56,8 +56,14 @@ session_start();
 <div class="container" style="margin-top:50px" >
   <div class="row">
     <div align="justify" class="col-sm-12">
+	
+<div align=left>
+<i class="fas fa-long-arrow-alt-right"></i><a href="manual_user.php"><strong>&nbsp;&nbsp;Α. Επισκέπτης Χρήστης</strong></a><br>
+<i class="fas fa-long-arrow-alt-right"></i><a href="manual_admin.php"><strong>&nbsp;&nbsp;Γ. Χρήστης Διαχειριστής</strong></a>
+<hr><p>
+</div>	
 
-<h3 align="center"><b>Β. Εγγεγραμμένος Χρήστης</b></h3>
+<h4 align="center"><b>Β. Εγγεγραμμένος Χρήστης</b></h4><br>
 
 <p align="justify">
 Με την εγγραφή στον διαδικτυακό τόπο ο χρήστης μπορεί να κάνει login στην εφαρμογή, οπότε και  θα βλέπει πάλι την εισαγωγική οθόνη περιήγησης στην εφαρμογή.<br>

@@ -56,12 +56,17 @@ session_start();
 <!-- table for DBLP API -->
 <div class="container" style="margin-top:50px" >
   <div class="row">
-    <div align="center" class="col-sm-12">
-	
+  
+  
+<div align="center" class="col-sm-12">
 
+<div align=left>
+<i class="fas fa-long-arrow-alt-right"></i><a href="manual_user.php"><strong>&nbsp;&nbsp;Α. Επισκέπτης Χρήστης</strong></a><br>
+<i class="fas fa-long-arrow-alt-right"></i><a href="manual_register.php"><strong>&nbsp;&nbsp;Β. Εγγεγραμμένος Χρήστης</strong></a>&nbsp;
+<hr><p>
+</div>
 
-
-<h4><strong>Γ. Χρήστης Διαχειριστής</strong></h4>
+<h4><strong>Γ. Χρήστης Διαχειριστής</strong></h4><br>
 <p align=justify>
 Ο λογαριασμός Διαχειριστή είναι ένας χρήστης τα στοιχεία του οποίου (username, password, email) θα είναι ήδη τοποθετημένα από τους δημιουργούς της εφαρμογής.<br>
 O συγκεκριμένος χρήστης θα έχει ένα μενού επιλογών ως εξής:<br>

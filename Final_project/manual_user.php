@@ -56,12 +56,17 @@ session_start();
 <div class="container" style="margin-top:50px" >
   <div class="row">
     <div align="center" class="col-sm-12">
-	
 
-<h3><b>Α. Επισκέπτης Χρήστης</b></h3>
+<div align=left>
+<i class="fas fa-long-arrow-alt-right"></i><a href="manual_register.php"><strong>&nbsp;&nbsp;Β. Εγγεγραμμένος Χρήστης</strong></a><br>
+<i class="fas fa-long-arrow-alt-right"></i><a href="manual_admin.php"><strong>&nbsp;&nbsp;Γ. Χρήστης Διαχειριστής</strong></a>
+<hr><p>
+</div>	
+
+<h4><b>Α. Επισκέπτης Χρήστης</b></h4><br>
 <p align="justify">
 
-Με την είσοδο στον διαδικτυακό τόπο ο χρήστης θα βλέπει την εισαγωγική οθόνη περιήγησης στην εφαρμογή.<br />
+Με την είσοδο στον διαδικτυακό τόπο ο χρήστης θα βλέπει την εισαγωγική οθόνη περιήγησης στην εφαρμογή.<br>
 
 Η αρχική οθόνη θα περιλαμβάνει ένα λογότυπο, ένα μενού πλοήγησης και ένα
 υποσέλιδο που περιέχει ενημερωτικά στοιχεία. Στην δεξιά πλευρά της σελίδας
