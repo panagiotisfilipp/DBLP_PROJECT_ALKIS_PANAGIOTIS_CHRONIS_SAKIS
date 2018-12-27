@@ -68,7 +68,7 @@
 		function confirmUXtest() {
 		var answer = confirm('Καλά θα ήταν να έχετε ολοκληρώσει την πλοήγησή σας στην εφαρμογή μας και μετά να απαντήσετε στην έρευνά μας. Επιθυμείτε να συνεχίσετε;');
 		if (answer) {
-			window.open('https://docs.google.com/forms/d/1ZqLOwAQ-QRyXYbc-teXJnRO_VpSc8Lu0kbHQxitGF_8/edit','_blank'); 
+			window.open('https://docs.google.com/forms/d/e/1FAIpQLSec-DAe02tg6NQ2qRYV0DSDO_qFO6J7NmUBD3ngYE8MBI3RrQ/viewform','_blank'); 
 		} else {
 			return false;
 		}
