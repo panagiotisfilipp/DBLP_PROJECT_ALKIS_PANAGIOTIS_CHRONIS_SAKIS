@@ -28,7 +28,7 @@
             <a class="nav-link"   href="contact_guest.php">  <i class="fa fa-envelope" aria-hidden="true"></i> Επικοινωνία</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link "   href="https://docs.google.com/forms/d/1ZqLOwAQ-QRyXYbc-teXJnRO_VpSc8Lu0kbHQxitGF_8/edit" target="_blank"> <i class="far fa-list-alt" aria-hidden="true"></i> Η γνώμη σας μετράει!</a>
+		     <a class="nav-link "  href='#' onclick="javascript:confirmUXtest();"> <i class="far fa-list-alt" aria-hidden="true"></i> Η γνώμη σας μετράει!</a>
           </li>
 		       	
 		<?php }?>
@@ -47,7 +47,7 @@
             <a class="nav-link"   href="contact_reg.php">  <i class="fa fa-envelope" aria-hidden="true"></i> Επικοινωνία</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link "   href="https://docs.google.com/forms/d/1ZqLOwAQ-QRyXYbc-teXJnRO_VpSc8Lu0kbHQxitGF_8/edit" target="_blank"> <i class="far fa-list-alt" aria-hidden="true"></i> Η γνώμη σας μετράει!</a>
+            <a class="nav-link "  href='#' onclick="javascript:confirmUXtest();"> <i class="far fa-list-alt" aria-hidden="true"></i> Η γνώμη σας μετράει!</a>
           </li>
           <?php }?>
 
@@ -64,6 +64,17 @@
           </li>	
 		<?php }?>
 			
+		<script language="javascript">
+		function confirmUXtest() {
+		var answer = confirm('Καλά θα ήταν να έχετε ολοκληρώσει την πλοήγησή σας στην εφαρμηγή μας και μετά να απαντήσετε στην έρευνά μας. Επιθυμείτε να συνεχίσετε;');
+		if (answer) {
+			window.open('https://docs.google.com/forms/d/1ZqLOwAQ-QRyXYbc-teXJnRO_VpSc8Lu0kbHQxitGF_8/edit','_blank'); 
+		} else {
+			return false;
+		}
+		}
+		</script>
+	
 	
 	<?php  if (!isset($_SESSION['username'])) { ?>
 		<li class="nav-item">
