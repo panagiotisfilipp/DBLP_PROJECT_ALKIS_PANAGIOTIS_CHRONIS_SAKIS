@@ -46,6 +46,15 @@
                                             <div id="registration-form" class="tab-pane fade">
 											    
                                                 <form method="post" action="register.php" id="register_form">
+												<div class="form-group">
+                                                        <label for="surname">Επώνυμο:</label>
+                                                        <input type="text" class="form-control" id="surname" placeholder="Εισάγετε το επώνυμό σας" name="surname" required>
+                                                    </div>
+													 
+                                                    <div class="form-group">
+                                                        <label for="name">Όνομα:</label>
+                                                        <input type="text" class="form-control" id="name" placeholder="Εισάγετε το όνομά σας" name="name" required>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label for="username"> Όνομα χρήστη:</label>
                                                         <input type="text" class="form-control" id="username" placeholder="Εισάγετε το όνομα χρήστη" name="username" required>
