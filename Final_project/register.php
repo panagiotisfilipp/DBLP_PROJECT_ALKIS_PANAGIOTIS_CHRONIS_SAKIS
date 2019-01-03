@@ -19,7 +19,7 @@ if (isset($_POST['username'])) {
   $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
    $name=mysqli_real_escape_string($conn, $_POST['name']);
    $surname=mysqli_real_escape_string($conn, $_POST['surname']);
-
+   $register_time=date('Y-m-d');//eisagogi xronou register tou xristi
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
   if (empty($username)) { array_push($errors, "Username is required"); }
@@ -49,8 +49,8 @@ $response_array = 'error';
   if (count($errors) == 0) {
   	$password = password_hash($password_1,PASSWORD_DEFAULT);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password,name,surname) 
-  			  VALUES('$username', '$email', '$password','$name','$surname')";			  
+  	$query = "INSERT INTO users (username, email, password,name,surname,register_time) 
+  			  VALUES('$username', '$email', '$password','$name','$surname','$register_time')";			  
   	mysqli_query($conn, $query);
   	$query = "SELECT * FROM users WHERE username='$username'";
   	$results = mysqli_query($conn, $query);
