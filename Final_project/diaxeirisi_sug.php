@@ -158,9 +158,9 @@ if (isset($_POST['search_p']) &&  !$_POST['search_p']==""){
                         <td><a href="<?php echo $row['url']; ?>" target="_blank" class="btn btn-primary"><span class="fab fa-telegram-plane"></span></a></td>
                         <td width="300px"><?php echo $row['notes']; ?></td>						
 						
-						 <td class='col-sm-1'>
+						 <td class='col-sm-0'>
 					     	 <button type="submit" class="btn btn-warning" onclick="paper_edit_form('<?php echo $a; ?>','<?php echo $user_id; ?>')" onmouseover="this.style.cursor='pointer'"><i class="fa fas fa-edit aria-hidden='true'"></i></button></td>
-						 <td class='col-sm-1'>
+						 <td class='col-sm-0'>
 							 <button type="submit" class="btn btn-danger" onclick="delete_paper('<?php echo $a; ?>','<?php echo $user_id; ?>')" onmouseover="this.style.cursor='pointer'"><i class="far fa-trash-alt aria-hidden='true'"></i></button>
 			
 						</td>

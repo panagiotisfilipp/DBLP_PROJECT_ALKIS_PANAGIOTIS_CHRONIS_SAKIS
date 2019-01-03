@@ -8,15 +8,15 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'alkibiad_dblp', 'dblp2018', 'alkibiad_dblp');
+include ('config.php');
 
 
 // ... 
 // LOGIN USER
 if (isset($_POST['name'])) {
 
-  $username = mysqli_real_escape_string($db, $_POST['name']);
-  $password = mysqli_real_escape_string($db, $_POST['pswd']);
+  $username = mysqli_real_escape_string($conn, $_POST['name']);
+  $password = mysqli_real_escape_string($conn, $_POST['pswd']);
 
   if (empty($username)) {
   	array_push($errors, "Username is required");
@@ -27,7 +27,7 @@ if (isset($_POST['name'])) {
 
   if (count($errors) == 0) {
   	$query = "SELECT * FROM users WHERE username='$username'";
-  	$results = mysqli_query($db, $query);
+  	$results = mysqli_query($conn, $query);
 	$row=mysqli_fetch_array($results,MYSQLI_ASSOC);
   	if (mysqli_num_rows($results) == 1 &&password_verify($password , $row["password"] )) {
   	  $_SESSION['username'] = $username;
