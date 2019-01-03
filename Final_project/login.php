@@ -34,14 +34,30 @@ if (isset($_POST['name'])) {
   	  $_SESSION['success'] = "Logged_in";
 	  $_SESSION['user_id'] = $row["user_id"];
 	  $_SESSION['role'] = $row["role"];
-	  //$response_array = 'success';
-	  //echo $response_array;
+	  $register_time = $row["register_time"];//xronos register apo basi
+	  //metatropes//////
+	 $_firstDate = date("Y-m-d", strtotime($register_time));
+	 $date = new DateTime($_firstDate);
 	  
+	  
+	   $current_date=date("Y-m-d");
+	  $_current_date=date("Y-m-d", strtotime($current_date));//trexousa imerominia#
+	  $now = new DateTime($_current_date);
+	 
+	// echo $date->diff($now)->format("%d");
+	 $interval=$date->diff($now)->format("%d");
+	 
 	  if ($_SESSION['role'] == "0"){
   	     header('location: index_admin.php');}
-  	  if ($_SESSION['role'] == "1"){ 
-  	      header('location: index_reg.php');}
-  	      
+  	  if (($_SESSION['role'] == "1")&&($interval>90))
+	  { 
+  	      echo "<script language='javascript'>alert('Πρέπει να αλλάξετε τον κωδικό εισόδου, γιατί έχουν περάσει 90 ημέρες απο την στιγμή της δημιουργίας του!!!');
+		document.location.href='index_reg.php';</script>";
+		}
+  	   
+	   else if ($_SESSION['role'] == "1"){
+           header('location: index_reg.php');
+		}		    
   	      
   	}else {
 		

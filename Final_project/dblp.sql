@@ -86,6 +86,7 @@ CREATE TABLE `users` (
   `role` varchar(45) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `surname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `register_time` datetime DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
