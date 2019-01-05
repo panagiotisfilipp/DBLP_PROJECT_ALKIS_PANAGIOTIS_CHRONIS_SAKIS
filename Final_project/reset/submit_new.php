@@ -1,4 +1,5 @@
 <?php
+$curDate = date('Y-m-d');//trexon imerominia
 if(isset($_POST['submit_password']) && $_POST['email'] && $_POST['password'])
 {
   $email=$_POST['email'];
@@ -7,7 +8,7 @@ if(isset($_POST['submit_password']) && $_POST['email'] && $_POST['password'])
   include ('config.php');
   
   $pass_new=password_hash($pass,PASSWORD_DEFAULT);
-  $query_select="update users set password='$pass_new' where email='$email'";
+  $query_select="update users set password='$pass_new',register_time='".$curDate."' where email='$email'";
   
    $select=$conn->query($query_select) or die('Error_in_select');
    if($select=$conn)
