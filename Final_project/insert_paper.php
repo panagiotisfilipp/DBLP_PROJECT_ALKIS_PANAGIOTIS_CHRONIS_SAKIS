@@ -1,3 +1,11 @@
+<?php
+include('config.php'); 
+include('lock.php');
+
+?>
+
+
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -13,8 +21,7 @@
     <div id="dialogboxfoot"></div>
   </div>
 <?php
-include('config.php'); 
-include('lock.php');
+
 /*-------------------------------------*/
 
 
