@@ -1,3 +1,17 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
 <?php
 include("config.php");//eisagogi stoixeion basis gia connection
 
@@ -40,12 +54,12 @@ $insert_download_keno=$conn->query($insert_keno) or die('Error_query,failed_inse
 }
 if ($insert_paper_keno && $insert_download_keno)
 	{
-			echo '<script language="javascript">alert("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, έγινε με επιτυχία!");document.location="index_login.php"; </script>';
+			echo '<script language="javascript">alert_paper_dblp.on("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, έγινε με επιτυχία!"); </script>';
 	}
 	 else
 	 {
-		echo '<script language="javascript">alert("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, δεν ήταν επιτυχής.")</script>';
-		echo '<script language="javascript"> document.location="index_login.php"; </script>';
+		echo '<script language="javascript">alert_paper_dblp.on("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, δεν ήταν επιτυχής.")</script>';
+		//echo '<script language="javascript"> document.location="index_login.php"; </script>';
 		exit();
 	 }	
 }
@@ -123,12 +137,12 @@ $DataArr_downloads = array();
     mysqli_query($conn, $insert_download_1);
 	 if($insert_download_1)
 	{
-		echo'<script language="javascript">alert("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, έγινε με επιτυχία!"); document.location="index_login.php";</script>';
+		echo'<script language="javascript">alert_paper_dblp.on("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, έγινε με επιτυχία!");</script>';
 	}
 	 else
 	 {
-		echo '<script language="javascript">alert("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, δεν ήταν επιτυχής.")</script>';
-		echo '<script language="javascript"> document.location="index_login.php"; </script>';
+		echo '<script language="javascript">alert_paper_dblp.on("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, δεν ήταν επιτυχής.")</script>';
+		//echo '<script language="javascript"> document.location="index_login.php"; </script>';
 		exit();
 	 }	
 }
@@ -189,26 +203,20 @@ foreach($_POST['checkbox'] as $pp)
 }
 if ($insert_paper ||$insert_download_2)
 	{
-			echo '<script language="javascript">alert("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, έγινε με επιτυχία!");document.location="index_login.php"; </script>';
+			echo '<script language="javascript">alert_paper_dblp.on("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, έγινε με επιτυχία!"); </script>';
 	}
 	else
 	 {
-		echo '<script language="javascript">alert("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, δεν ήταν επιτυχής.")</script>';
-		echo '<script language="javascript"> document.location="index_login.php"; </script>';
+		echo '<script language="javascript">alert_paper_dblp.on("Η εισαγωγή των δημοσιεύσεων που επιλέξατε, δεν ήταν επιτυχής.")</script>';
+		//echo '<script language="javascript"> document.location="index_login.php"; </script>';
 		exit();
 	 }
 }
 
 ///minimata ejodou
-	
-	
-	 
-	 
-		
-
-	
-
-
 
 $conn->close();
 ?>
+</div>
+</body>
+</html>
