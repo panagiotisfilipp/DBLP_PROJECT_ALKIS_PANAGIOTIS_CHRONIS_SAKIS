@@ -37,7 +37,7 @@ if($_GET['key'] && $_GET['reset'])
    <div class="form-group">
                                 <label class="control-label col-sm-4" style="margin:5px 0px 10px 0px;" for="name">Νέο:</label>
                                 <div class="col-sm-10" style="margin-bottom:1px;">
-     <input type="password" class="form-control" name="password" required placeholder="Νέο Συνθηματικό" data-toggle="password" id="password">
+     <input type="password" class="form-control" name="password" required placeholder="Νέο Συνθηματικό" data-toggle="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
       </div>
     </div>
   
