@@ -48,9 +48,14 @@
 <div align="center" class="col-sm-9">
 <p>
 <h3><b>Εφαρμογή αναζήτησης και αποθήκευσης συγγραμμάτων</b></h3>
-<br><br><br>
+<br>
 
-<div> <img src="images/banner_paper.jpg" class="img-fluid" alt="ΑΤΕΙ ΘΕΣΣΑΛΟΝΙΚΗΣ"></div> <br><br>
+<div style="margin-top:12px;">
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="824" height="480" >
+    <source src="./video/intro.webm" type="video/mp4">
+  </video>
+  </div>
+<br><br>
 <div align="justify">Η παρούσα εφαρμογή δίνει την δυνατότητα στο χρήστη να αναζητήσει επιστημονικά συγγράμματα που είναι καταχωρημένα στην βιβλιοθήκη του dblp.uni-trier.de.<br>
 Δίνεται η δυνατότητα στο χρήστη που θα εγγραφεί στην υπηρεσία να αναζητήσει, να δημιουργήσει & να διαχειριστεί την προσωπική του βιβλιοθήκη συγγραμμάτων.</div>
 </p>	
