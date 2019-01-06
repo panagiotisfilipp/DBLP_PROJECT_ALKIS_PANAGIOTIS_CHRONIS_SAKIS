@@ -62,7 +62,7 @@ include('config.php');
 		    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                    
 				  <div class="input-group mb-3">
-                     <input type="text" class="form-control" placeholder="Αναζήτηση τίτλου ή συγγραφέα ή έτος στην βάση..." name="search_p">
+                     <input type="text" class="form-control" placeholder="Αναζήτηση τίτλου ή συγγραφέα ή έτος στην βάση..." name="search_p" pattern=".{3,}" title="Πρέπει να έχει 3 χαρακτήρες τουλάχιστον." required>
                     <div class="input-group-append">
                      <button class="btn btn-info" type="submit"><span class="fas fa-search"></span> Αναζήτηση</button>
                     </div>
