@@ -1,3 +1,17 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
 <?php
 include('config.php'); 
 include('lock.php');
@@ -45,12 +59,12 @@ $sql_pape = "INSERT INTO papers (`url_id`,`authors`,`title`, `year`,`type`, `url
 			   if (($conn->query($sql_pape) === TRUE) && ($conn->query($sql_down) === TRUE)){
 			    			                   
 			     $message = "Η εισαγωγή νέας δημοσίευσης ήταν επιτυχής!";
-				 echo "<script type='text/javascript'>alert('$message');</script>";
-		         echo '<script language="javascript"> document.location="diax_login.php"; </script>';
+				 echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
+		       
 		         exit();
                } else {
 				 $message = "Error: (2B)" . $sql_down . "<br>" . $conn->error;
-                 echo "<script type='text/javascript'>alert('$message');</script>";}
+                 echo "<script type='text/javascript'>alert_paper.on('$message');</script>";}
 			   
         }else{
 			
@@ -60,13 +74,16 @@ $sql_pape = "INSERT INTO papers (`url_id`,`authors`,`title`, `year`,`type`, `url
 			if (($conn->query($sql_pape) === TRUE) && ($conn->query($sql_down) === TRUE)){
 			    			                   
 			     $message = "Η εισαγωγή νέας δημοσίευσης ήταν επιτυχής!";
-				 echo "<script type='text/javascript'>alert('$message');</script>";
-		         echo '<script language="javascript"> document.location="diax_login.php"; </script>';
+				 echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
+		        
 		         exit();
                } else {
 				 $message = "Error: (2B)" . $sql_down . "<br>" . $conn->error;
-                 echo "<script type='text/javascript'>alert('$message');</script>";}
+                 echo "<script type='text/javascript'>alert_paper.on('$message');</script>";}
 		}	
 		
 $conn->close();
 ?>
+</div>
+</body>
+</html>

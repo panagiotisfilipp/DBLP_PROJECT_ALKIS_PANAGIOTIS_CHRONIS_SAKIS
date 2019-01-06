@@ -52,9 +52,11 @@ include('lock.php');
 <div class="table-responsive">
        <table class="table table-striped table-bordered">
 	<thead class=thead-dark>
+	             <th>Όνομα</th>
+				 <th>Επώνυμο</th>
 				<th>Όνομα Χρήστη</th>
-				
 				<th>Email</th>
+				<th>Ημερ/νια Εγγραφής</th>
 				<th colspan="2">Ενέργειες</th>
 		
 			</thead>
@@ -73,9 +75,10 @@ if ($result)
 		$i++;
 		$A_apotelesma[$i]['user_id'] = $row['user_id'];
 		$A_apotelesma[$i]['username'] = $row['username'];
-		
+		$A_apotelesma[$i]['name'] = $row['name'];
+		$A_apotelesma[$i]['surname'] = $row['surname'];
 		$A_apotelesma[$i]['email'] = $row['email'];
-		
+		$A_apotelesma[$i]['register_time'] = $row['register_time'];
 	}
 }
 
@@ -88,10 +91,11 @@ if(is_array($A_apotelesma))
    	foreach($A_apotelesma as $in => $value)
 	{
 		echo "<tr class='info'>
+		          <td>".$value['name']."</td>
+				   <td>".$value['surname']."</td>
 				  <td>".$value['username']."</td>
-				  
 				  <td>".$value['email']."</td>
-					  
+					<td>".$value['register_time']."</td>  
 				  <td>
 				  <button type=submit class=btn btn-warning \" onclick='users_edit_form(".$value['user_id'].")' onmouseover=\"this.style.cursor='pointer'\"><i class=\"fas fa-edit\" aria-hidden=true></i></button>
 				  

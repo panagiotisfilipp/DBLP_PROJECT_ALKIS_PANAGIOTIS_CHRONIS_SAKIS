@@ -1,8 +1,6 @@
 
- 
 <!------ Login/Reg  ----->
 <!--Modal: Login / Register Form-->
-
 
 <div class="modal fade" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog cascading-modal" role="document">
@@ -45,10 +43,11 @@
                                             </div>
                                             <div id="registration-form" class="tab-pane fade">
 											    
+                                                    
                                                 <form method="post" action="register.php" id="register_form">
 												<div class="form-group">
                                                         <label for="surname">Επώνυμο:</label>
-                                                        <input type="text" class="form-control" id="surname" placeholder="Εισάγετε το επώνυμό σας" name="surname" required>
+                                                        <input type="text" class="form-control" id="surname" placeholder="Εισάγετε το επώνυμο σας" name="surname" required>
                                                     </div>
 													 
                                                     <div class="form-group">
@@ -65,15 +64,15 @@
                                                     </div>	
                                                     
                                                     <div class="form-group">
-			    <label for="password">Κωδικός:</label>
-			    <input class="form-control" id="password_1" name="password_1" placeholder="Δημιουργία νέου κωδικού" required 
-			    	data-toggle="password">
-			</div>
-			<div class="form-group">
-			    <label for="password">Επαλήθευση Κωδικού:</label>
-			    <input class="form-control" id="password_2" name="password_2" placeholder="Επαλήθευση νέου κωδικού" required 
-			    	data-toggle="password">
-			</div>
+			                                            <label for="password">Κωδικός:</label>
+			                                            <input class="form-control" id="password_1" name="password_1" placeholder="Δημιουργία νέου κωδικού" required 
+			    	                                       data-toggle="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
+			                                        </div>
+			                                       <div class="form-group">
+			                                            <label for="password">Επαλήθευση Κωδικού:</label>
+			                                             <input class="form-control" id="password_2" name="password_2" placeholder="Επαλήθευση νέου κωδικού" required 
+			    	                                      data-toggle="password">
+			                                       </div>
                                                     
                                                     
 					
@@ -81,9 +80,11 @@
 													<div align="center" id="register_div" >
 														<input type="submit"  class="btn btn-success" name="reg_user" id="btn_register" value="Εγγραφή" />	
 													</div>
+													
                                                 </form>
+												
                                             </div>
-
+                                    
                                         </div>
                                     </div>
 
@@ -115,7 +116,8 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-4" style="margin:5px 0px 10px 0px;" for="name">Νέο:</label>
                                 <div class="col-sm-10" style="margin-bottom:1px;">
-                                    <input type="password" class="form-control" name="newPassword" required placeholder="Νέο Συνθηματικό" data-toggle="password" id="newPassword">
+                                    <input type="password" class="form-control" name="newPassword" required placeholder="Νέο Συνθηματικό" data-toggle="password" id="newPassword" 
+									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
                                 </div>
                             </div>
                             
@@ -135,7 +137,6 @@
 		</div>
 		</div>
 		</div>
-
 
 
 <script src="./js_async_calls/bootstrap-password-toggler.js" type="text/javascript"></script>
@@ -203,8 +204,15 @@ if(newPassword.value != confirmPassword.value) {
 	document.getElementById("confirmPassword").innerHTML = "not same";
 	output = false;
 } 	
+//validate if password_old and password_new is equal
+if(newPassword.value==currentPassword.value){
+	newPassword.focus();
+	alert( "Ο νέος κωδικός δεν μπορεί να είναι ίδιος με τον τρέχων για λόγους ασφαλείας");
+	output = false;
+}
 return output;
 } 
 </script> 
+
 
 

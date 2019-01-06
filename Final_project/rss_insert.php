@@ -1,5 +1,18 @@
-﻿<!-- Εισαγωγή χρήστη -->
-
+﻿<!-- Εισαγωγή rss -->
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
 <?php
 
 include("config.php");
@@ -17,8 +30,8 @@ $check_username_query = "SELECT link FROM posts";
 $check_username=$conn->query($check_username_query) or die ('Error, query failed check_paper_in_base');
 while($same = mysqli_fetch_row($check_username)) {
 	if ($same[0] == $_POST["link"]){
-		echo '<script language="javascript">alert("Υπάρχει ήδη rss με αυτό το LINk.")</script>';		
-		echo '<script language="javascript"> document.location="preview_rss.php";</script>';
+		echo '<script language="javascript">alert_rss.on("Υπάρχει ήδη rss με αυτό το LINk.")</script>';		
+		
 	exit();
 	}
 }
@@ -44,13 +57,16 @@ $link_escaped = mysqli_real_escape_string($conn, $_POST['link']);//kano escape x
 	{
 		
 
-			echo '<script language="javascript">alert("Η εγγραφή νέου rss ολοκληρώθηκε!"); document.location="preview_rss.php";</script>';
+			echo '<script language="javascript">alert_rss.on("Η εγγραφή νέου rss ολοκληρώθηκε!");</script>';
 	}
 	 else
 	 {
-		echo '<script language="javascript">alert("Η εισαγωγή rss δεν ήταν επιτυχής.")</script>';
-		echo '<script language="javascript"> document.location="preview_rss.php"; </script>';
+		echo '<script language="javascript">alert_rss.on("Η εισαγωγή rss δεν ήταν επιτυχής.")</script>';
+		
 		exit();
 	 }	
 }
 ?>
+</div>
+</body>
+</html>

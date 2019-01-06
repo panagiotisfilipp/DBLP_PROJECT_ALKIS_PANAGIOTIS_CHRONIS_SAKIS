@@ -1,4 +1,19 @@
-﻿<?php
+﻿
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+<?php
 //Σύνδεση με τη Βάση 
 include("config.php");
 
@@ -19,7 +34,7 @@ include("config.php");
 	
 //Έλεγχος αλλαγής στοιχείων
 	if ($_POST['title']==$title && $_POST['description']==$description && $_POST['link']==$link )
-		echo '<script language="javascript">alert("Δεν έγινε καμία αλλαγή!"); document.location="preview_rss.php";</script>';
+		echo '<script language="javascript">alert_rss.on("Δεν έγινε καμία αλλαγή!"); </script>';
 	else
 	{
 		
@@ -40,11 +55,11 @@ $link_escaped = mysqli_real_escape_string($conn, $_POST['link']);//kano escape x
 		
 		//Μήνυμα ενημέρωσης
 		 if ($update_posts)
-			 echo '<script language="javascript">alert("Τα στοιχεία του rss τροποποιήθηκαν!"); document.location="preview_rss.php";</script>';
+			 echo '<script language="javascript">alert_rss.on("Τα στοιχεία του rss τροποποιήθηκαν!"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert("Η τροποποίηση του rss δεν ήταν επιτυχής.")</script>';
-			echo '<script language="javascript"> document.location="preview_rss.php"; </script>';
+			echo '<script language="javascript">alert_rss.on("Η τροποποίηση του rss δεν ήταν επιτυχής.")</script>';
+			
 			exit();
 		 }
 		
@@ -52,3 +67,6 @@ $link_escaped = mysqli_real_escape_string($conn, $_POST['link']);//kano escape x
 	}
 $conn->close();
 ?>
+</div>
+</body>
+</html>

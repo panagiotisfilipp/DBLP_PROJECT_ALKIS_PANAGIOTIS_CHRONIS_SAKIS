@@ -1,4 +1,18 @@
-﻿<?php
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+<?php
 //Σύνδεση με τη Βάση 
 include("config.php");
 
@@ -42,7 +56,7 @@ if ($result)
 }
 //Έλεγχος αλλαγής στοιχείων
 	if ($_POST['notes']==$notes && $_POST['title']==$title && $_POST['authors']==$authors && $_POST['year']==$year && $_POST['type']==$type && $_POST['url']==$url)
-		echo '<script language="javascript">alert("Δεν έγινε καμία αλλαγή!"); document.location="diax_login.php";</script>';
+		echo '<script language="javascript">alert_paper.on("Δεν έγινε καμία αλλαγή!"); </script>';
 	else
 	{
 		
@@ -74,11 +88,11 @@ if ($result)
 		
 		//Μήνυμα ενημέρωσης
 		 if ($update_notes_m && $update_query_m)
-			 echo '<script language="javascript">alert("Τα Στοιχεία του Συγγράμματος τροποποιήθηκαν!"); document.location="diax_login.php";</script>';
+			 echo '<script language="javascript">alert_paper.on("Τα Στοιχεία του Συγγράμματος τροποποιήθηκαν!");</script>';
 		 else
 		 {
-			echo '<script language="javascript">alert("Η τροποποίηση των Στοιχείων του Συγγράμματος δεν ήταν επιτυχής.")</script>';
-			echo '<script language="javascript"> document.location="diax_login.php"; </script>';
+			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Στοιχείων του Συγγράμματος δεν ήταν επιτυχής.")</script>';
+			
 			exit();
 		 }
 		
@@ -102,7 +116,7 @@ else{
 }
 //Έλεγχος αλλαγής στοιχείων
 	if ($_POST['notes']==$notes)
-		echo '<script language="javascript">alert("Δεν έγινε καμία αλλαγή!"); document.location="diax_login.php";</script>';
+		echo '<script language="javascript">alert_paper.on("Δεν έγινε καμία αλλαγή!");</script>';
 	else
 	{
 		
@@ -116,11 +130,11 @@ else{
 		
 		//Μήνυμα ενημέρωσης
 		 if ($update_notes)
-			 echo '<script language="javascript">alert("Τα Σχόλια του Συγγράμματος τροποποιήθηκαν!"); document.location="diax_login.php";</script>';
+			 echo '<script language="javascript">alert_paper.on("Τα Σχόλια του Συγγράμματος τροποποιήθηκαν!");</script>';
 		 else
 		 {
-			echo '<script language="javascript">alert("Η τροποποίηση των Σχολίων του Συγγράμματος δεν ήταν επιτυχής.")</script>';
-			echo '<script language="javascript"> document.location="diax_login.php"; </script>';
+			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Σχολίων του Συγγράμματος δεν ήταν επιτυχής.")</script>';
+			
 			exit();
 		 }
 		
@@ -131,3 +145,6 @@ else{
 	
 $conn->close();
 ?>
+</div>
+</body>
+</html>

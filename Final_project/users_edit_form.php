@@ -57,10 +57,13 @@ if ($result)
 	$rows[]=$row;
 	
 	$user_id=$rows[0]['user_id'];
+	$name=$rows[0]['name'];
+	$surname=$rows[0]['surname'];
 	$username=$rows[0]['username'];
 	$password=$rows[0]['password'];
 	$email=$rows[0]['email'];
 	$role=$rows[0]['role'];
+	$register_time=$rows[0]['register_time'];
 }
 }
 
@@ -71,7 +74,7 @@ if ($result)
 <html>
 <meta charset="utf-8"/>
 <head>
-    <title>Διαχείριση RSS</title>
+    <title>Διαχείριση Χρηστών</title>
 	<link rel="shortcut icon" type="image/x-icon" href="logo2.ico" />     
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 	<!-- Required meta tags -->
@@ -117,7 +120,19 @@ if ($result)
 <form name="edit_user" method="post" action="users_update.php" enctype="multipart/form-data">
 	<h3><b>ΕΠΕΞΕΡΓΑΣΙΑ ΣΤΟΙΧΕΙΩΝ ΧΡΗΣΤΩΝ</h3><br></th>
 	<div class="table-responsive">
-       <table class="table table-striped table-bordered">	
+       <table class="table table-striped table-bordered">
+           <tr>
+			<th align="right">Όνομα</th>
+			<td align='left'>
+			<?php echo"<input type='text' size='55' value='".$name."' name='name' >"; ?> 
+			</td>
+		</tr>
+          <tr>
+			<th align="right">Επώνυμο</th>
+			<td align='left'>
+			<?php echo"<input type='text' size='55' value='".$surname."' name='surname' >"; ?> 
+			</td>
+		</tr>		
 		<tr>
 			<th align="right">Όνομα Χρήστη:</th>
 			<td align='left'>
@@ -146,7 +161,13 @@ if ($result)
            			?> 
 			</td>
 		</tr>
-		
+			<tr>
+			<th align="right">Ημερ/νια Εγγραφής:</th>
+			<td align='left' colspan="2">
+			<?php echo"<input type='text' size='55' value='".$register_time."' name='register_time' >";
+           			?> 
+			</td>
+		</tr>
 		
 	    
 		
@@ -159,7 +180,8 @@ if ($result)
 	</table>
 	<br><br>	
 	<strong>Τροποποίηση Χρηστών</strong>
-	<p>Σ' αυτή τη φόρμα ο Διαχειριστής μπορεί να τροποποιήσει τα στοιχεία των Χρηστών.<br>Αν το πεδίο ρόλος είναι "1" ο χρήστης είναι απλός,αλλιώς αν είναι "0" είναι διαχειριστής. </p>
+	<p>Σ' αυτή τη φόρμα ο Διαχειριστής μπορεί να τροποποιήσει τα στοιχεία των Χρηστών.<br>Αν το πεδίο ρόλος είναι "1" ο χρήστης είναι απλός,αλλιώς αν είναι "0" είναι διαχειριστής.<br>
+       H ημερομηνία γράφεται με το format (yy-mm-dd),π.χ 2019-01-05	</p>
 
 </form>
 </div>

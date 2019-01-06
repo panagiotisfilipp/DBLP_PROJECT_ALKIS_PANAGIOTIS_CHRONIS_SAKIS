@@ -1,6 +1,19 @@
 <!-- Διαγραφή χρήστη -->
 <script src="edit_f.js"></script>
-
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
 <?php
 //Σύνδεση με τη βάση
 include("config.php");
@@ -29,18 +42,21 @@ if($result->num_rows>0)
 			
 
 		 if ($conn->query($del_query)=== TRUE)
-			 echo '<script language="javascript">alert("Ο χρήστης  διαγράφηκε με επιτυχία"); document.location="preview_users.php";</script>';
+			 echo '<script language="javascript">alert_user.on("Ο χρήστης  διαγράφηκε με επιτυχία"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert("Η διαγραφή του χρήστη δεν ήταν επιτυχής.")</script>';
-			echo '<script language="javascript"> document.location="preview_users.php"; </script>';
+			echo '<script language="javascript">alert_user.on("Η διαγραφή του χρήστη δεν ήταν επιτυχής.")</script>';
+			
 			exit();
 		 }
 }
 else
 {
-	echo '<script language="javascript">alert("Ανύπαρκτος χρήστης.")</script>';
-	echo '<script language="javascript"> document.location="preview_users.php"; </script>';
+	echo '<script language="javascript">alert_user.on("Ανύπαρκτος χρήστης.")</script>';
+	
 	exit();
 }	
 ?>
+</div>
+</body>
+</html>

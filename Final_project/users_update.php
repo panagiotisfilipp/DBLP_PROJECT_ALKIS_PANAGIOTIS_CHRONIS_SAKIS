@@ -1,4 +1,21 @@
-﻿<?php
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+
+
+
+<?php
 //Σύνδεση με τη Βάση 
 include("config.php");
 
@@ -11,15 +28,19 @@ include("config.php");
 	$rows[]=$row;
 	
 	$user_id=$rows[0]['user_id'];
+	$name=$rows[0]['name'];
+	$surname=$rows[0]['surname'];
 	$username=$rows[0]['username'];
 	$password=$rows[0]['password'];
 	$email=$rows[0]['email'];
 	$role=$rows[0]['role'];
+	$register_time=$rows[0]['register_time'];
 }	
 	
 //Έλεγχος αλλαγής στοιχείων
-	if ($_POST['username']==$username && $_POST['password']==$password && $_POST['email']==$email && $_POST['role']==$role)
-		echo '<script language="javascript">alert("Δεν έγινε καμία αλλαγή!"); document.location="preview_users.php";</script>';
+	if ($_POST['name']==$name && $_POST['surname']==$surname && $_POST['username']==$username && $_POST['password']==$password && $_POST['email']==$email && $_POST['role']==$role && $_POST['register_time']==$register_time)
+		echo '<script language="javascript">alert_user.on("Δεν έγινε καμία αλλαγή!.");
+	    </script>';
 	else
 	{
 		
@@ -27,11 +48,17 @@ include("config.php");
 $password_escaped = mysqli_real_escape_string($conn, $_POST['password']);//kano escape xaraktires 
 $email_escaped = mysqli_real_escape_string($conn, $_POST['email']);//kano escape xaraktires 	
 $role_escaped = mysqli_real_escape_string($conn, $_POST['role']);//kano escape xaraktires 
+$name_escaped = mysqli_real_escape_string($conn, $_POST['name']);//kano escape xaraktires
+$surname_escaped = mysqli_real_escape_string($conn, $_POST['surname']);//kano escape xaraktires
+$register_time_escaped = mysqli_real_escape_string($conn, $_POST['register_time']);//kano escape xaraktires
 			
 			$update_users_query= " UPDATE users
 								SET  username='".$username_escaped."', 
+								name='".$name_escaped."',
+								surname='".$surname_escaped."',
 								password='".$password_escaped."',
 								email='".$email_escaped."',
+								register_time='".$register_time_escaped."',
 	                            role='".$role_escaped."'
 								WHERE user_id='".$_POST['user_id']."'";
 		
@@ -41,11 +68,11 @@ $role_escaped = mysqli_real_escape_string($conn, $_POST['role']);//kano escape x
 		
 		//Μήνυμα ενημέρωσης
 		 if ($update_users)
-			 echo '<script language="javascript">alert("Τα στοιχεία του χρήστη τροποποιήθηκαν!"); document.location="preview_users.php";</script>';
+			 echo '<script language="javascript">alert_user.on("Τα στοιχεία του χρήστη τροποποιήθηκαν!"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert("Η τροποποίηση του χρήστη δεν ήταν επιτυχής.")</script>';
-			echo '<script language="javascript"> document.location="preview_users.php"; </script>';
+			echo '<script language="javascript">alert_user.on("Η τροποποίηση του χρήστη δεν ήταν επιτυχής.")</script>';
+			
 			exit();
 		 }
 		
@@ -53,3 +80,6 @@ $role_escaped = mysqli_real_escape_string($conn, $_POST['role']);//kano escape x
 	}
 
 ?>
+</div>
+</body>
+</html>

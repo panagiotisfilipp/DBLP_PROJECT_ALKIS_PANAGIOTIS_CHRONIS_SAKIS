@@ -1,4 +1,18 @@
-﻿<?php
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+<?php
     include('config.php');
 	
 
@@ -16,12 +30,12 @@
 	
 	 if ($conn->query($del_paper) === TRUE){
 	  $message = "Η διαγραφή της δημοσίευσης ήταν επιτυχής!";
-				 echo "<script type='text/javascript'>alert('$message');</script>";
-		         echo '<script language="javascript"> document.location="diax_login.php"; </script>';
+				 echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
+		         
 		         exit();
 	 }else{
-		 $message = "Error: (2B) <br>" . $conn->error;
-         echo "<script type='text/javascript'>alert('$message');</script>";
+		 $message = "Η διαγραφή της δημοσίευσης δεν ήταν επιτυχής" . $conn->error;
+         echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
 		  }
 	 
 		}
@@ -45,12 +59,12 @@
 		  echo "<br>".$del_downl;
 	    if ($conn->query($del_downl) === TRUE){
 			$message = "Η διαγραφή της δημοσίευσης ήταν επιτυχής!";
-				 echo "<script type='text/javascript'>alert('$message');</script>";
-		         echo '<script language="javascript"> document.location="diax_login.php"; </script>';
+				 echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
+		         
 		         exit();
 	 }else{
-		 $message = "Error: (2B) <br>" . $conn->error;
-         echo "<script type='text/javascript'>alert('$message');</script>";
+		 $message = "Η διαγραφή της δημοσίευσης δεν ήταν επιτυχής" . $conn->error;
+         echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
 		 }
 		}
 	
@@ -61,12 +75,12 @@
 		
 	    if ($conn->query($del_paper2) === TRUE){
 			$message = "Η διαγραφή της δημοσίευσης ήταν επιτυχής!";
-				 echo "<script type='text/javascript'>alert('$message');</script>";
-		         echo '<script language="javascript"> document.location="diax_login.php"; </script>';
+				 echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
+		        
 		         exit();
 	 }else{
-		 $message = "Error: (2B) <br>" . $conn->error;
-         echo "<script type='text/javascript'>alert('$message');</script>";
+		 $message = "Η διαγραφή της δημοσίευσης δεν ήταν επιτυχής " . $conn->error;
+         echo "<script type='text/javascript'>alert_paper.on('$message');</script>";
 		 }
 		}
 	}
@@ -74,3 +88,6 @@
 
 $conn->close();
 ?>
+</div>
+</body>
+</html>

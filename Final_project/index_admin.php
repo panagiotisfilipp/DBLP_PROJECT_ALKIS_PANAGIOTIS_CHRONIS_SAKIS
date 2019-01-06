@@ -3,12 +3,55 @@
       
    ]); ?>
 
+<?php include ('config.php'); 
+//metrao xristes//////
+$query = "SELECT * FROM users where role=1";
+
+if ($result=mysqli_query($conn,$query))
+  {
+ 
+  $rowcount=mysqli_num_rows($result);
+ 
+  mysqli_free_result($result);
+  }
+////////////////////metrao sigrammata dblp//
+$query_dblp = "SELECT * FROM papers where url_id like 'URL%'";
+
+if ($result_dblp=mysqli_query($conn,$query_dblp))
+  {
+ 
+  $count_dblp=mysqli_num_rows($result_dblp);
+ 
+  mysqli_free_result($result_dblp);
+  }
+  
+  ////////////////////metrao sigrammata xristi//
+$query_user = "SELECT * FROM papers where url_id like 'MURL%'";
+
+if ($result_user=mysqli_query($conn,$query_user))
+  {
+ 
+  $count_paper_user=mysqli_num_rows($result_user);
+ 
+  mysqli_free_result($result_user);
+  }
+   ////////////////////metrao rss//
+$query_rss = "SELECT * FROM posts ";
+
+if ($result_rss=mysqli_query($conn,$query_rss))
+  {
+ 
+  $count_rss=mysqli_num_rows($result_rss);
+ 
+  mysqli_free_result($result_rss);
+  }
+?> 
 <!DOCTYPE html>
 
 <html lang="en">
 
 <head>
-    <title>Call for papers</title>
+    <title>Στατιστικά Στοιχεία Διαχειριστή</title>
 	<link rel="shortcut icon" type="image/x-icon" href="logo2.ico" />     
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 	<!-- Required meta tags -->
@@ -50,17 +93,87 @@
   <div class="row">
 <div align="center" class="col-sm-9">
 <p>
-<h3><b>Εφαρμογή αναζήτησης και αποθήκευσης συγγραμμάτων</b></h3>
-<br><br><br>
-
-<div> <img src="images/banner_paper.jpg" class="img-fluid" alt="ΑΤΕΙ ΘΕΣΣΑΛΟΝΙΚΗΣ"></div> <br><br>
-<div align="justify">Η παρούσα εφαρμογή δίνει την δυνατότητα στο χρήστη να αναζητήσει επιστημονικά συγγράμματα που είναι καταχωρημένα στην βιβλιοθήκη του dblp.uni-trier.de.<br>
-Δίνεται η δυνατότητα στο χρήστη που θα εγγραφεί στην υπηρεσία να αναζητήσει, να δημιουργήσει & να διαχειριστεί την προσωπική του βιβλιοθήκη συγγραμμάτων.</div>
+<h3><b><u>Στατιστικά Στοιχεία Διαχειριστή</u></b></h3>
+<br><br>
+ <!-- Icon Cards-->
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon text-center">
+                    <i class="fas fa-users" style='font-size:36px'></i>
+                  </div>
+                  <div class="mr-6"><?php echo $rowcount;?> Εγγεγραμμένοι Χρήστες!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                 
+                  
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-warning o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fas fa-rss" style='font-size:36px'></i>
+                  </div>
+                  <div class="mr-6"><?php echo $count_rss;?> Σύνολικά RSS!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  
+                </a>
+              </div>
+            </div>
+			 <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-success o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fas fa-university" style='font-size:36px'></i>
+                  </div>
+                  <div class="mr-6"><?php echo $count_dblp;?> Συγγράμματα DBLP!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="./dblp_total_view.php">
+                  <span class="float-left">Λεπτομέρειες</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-danger o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fas fa-address-book" style='font-size:36px'></i>
+                  </div>
+                  <div class="mr-6"><?php echo $count_paper_user;?> Συγγράμματα Χρήστών!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="./user_total_view.php">
+                  <span class="float-left">Λεπτομέρειες</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>	
+          </div>
+		 <div class="row">
+		  <div align="center" class="col-sm-9">
+		 <div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="824" height="540" >
+    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+  </video>
+  </div>
+  </div>
+  </div>
+		  
+		  
 </p>	
 </div>
 <div align="center" class="col-sm-3" style="margin-top:20px">
 <p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><?php include ('rss_show.php'); ?></p>
-</div> 
+</div>
+ 
 </div>
 </div>
  </div>
@@ -79,14 +192,7 @@
  <?php include ('footer.php');?> 
   
 <!-- Login Form Call -->
-
-<?php //include ('modal.php'); ?> 
-
-
-
-
-
-
+<?php include ('modal.php'); ?> 
 <div class="text-center">
     
 </div>

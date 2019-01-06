@@ -1,6 +1,19 @@
 <!-- Διαγραφή χρήστη -->
 <script src="edit_f.js"></script>
-
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="alert.css">
+<script src="alert.js"></script>
+</head>
+<body>
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
 <?php
 //Σύνδεση με τη βάση
 include("config.php");
@@ -29,18 +42,21 @@ if($result->num_rows>0)
 			
 
 		 if ($conn->query($del_query)=== TRUE)
-			 echo '<script language="javascript">alert("Το rss διαγράφηκε με επιτυχία"); document.location="preview_rss.php";</script>';
+			 echo '<script language="javascript">alert_rss.on("Το rss διαγράφηκε με επιτυχία"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert("Η διαγραφή του rss δεν ήταν επιτυχής.")</script>';
-			echo '<script language="javascript"> document.location="preview_rss.php"; </script>';
+			echo '<script language="javascript">alert_rss.on("Η διαγραφή του rss δεν ήταν επιτυχής.")</script>';
+			
 			exit();
 		 }
 }
 else
 {
-	echo '<script language="javascript">alert("Ανύπαρκτο rss.")</script>';
-	echo '<script language="javascript"> document.location="preview_rss.php"; </script>';
+	echo '<script language="javascript">alert_rss.on("Ανύπαρκτο rss.")</script>';
+	
 	exit();
 }	
 ?>
+</div>
+</body>
+</html>
