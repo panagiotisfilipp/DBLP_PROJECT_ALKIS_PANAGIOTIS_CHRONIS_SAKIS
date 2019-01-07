@@ -144,18 +144,18 @@ if ($result_pg=mysqli_query($conn,$query_dblp))
 	if($page_cur>1)
 	{
 	
-   echo '<li class="page-item"><a class=page-link href="./dblp_total_view.php">Αρχική</a></li>';	
+   echo '<li class="page-item"><a class=page-link href="./user_total_view.php">Αρχική</a></li>';	
 	}	
 	else
 	{
 	  
-	  echo '<li class="page-item disabled"><a class=page-link href="./dblp_total_view.php">Αρχική</a></li>';
+	  echo '<li class="page-item disabled"><a class=page-link href="./user_total_view.php">Αρχική</a></li>';
 	}
 	
 	//Προηγούμενη σελίδα όταν γεμίσει η πρώτη σελίδα
 	if($page_cur>1)
 	{
-		echo '<li class="page-item"><a class=page-link href="./dblp_total_view.php?&page='.($page_cur-1).'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></li>';
+		echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.($page_cur-1).'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></li>';
 	}
 	//Προηγούμενη σελίδα στη πρώτη σελίδα
 	
@@ -166,24 +166,24 @@ if ($result_pg=mysqli_query($conn,$query_dblp))
 		if($page_cur==$i)
 		{
 	
-		echo '<li class="page-item"><a class=page-link href="./dblp_total_view.php">'.$i.'</a></li>';
+		echo '<li class="page-item"><a class=page-link href="./user_total_view.php">'.$i.'</a></li>';
 		}
 		else 
 		{
 		
-		echo '<li class="page-item"><a class=page-link href="./dblp_total_view.php?&page='.$i.'">'.$i.'</a></li>';
+		echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.$i.'">'.$i.'</a></li>';
 		}
 			
 	}
 	//if ($total_page == 1){
-	echo '<li class="page-item"><a class=page-link href="./dblp_total_view.php?&page='.$i.'">'.$i.'</a></li>';
-	//}else {echo '<li class="page-item"><a class=page-link href="./dblp_total_view.php?&page='.$i.'">'.$i.'</a></li>';}
+	echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.$i.'">'.$i.'</a></li>';
+	//}else {echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.$i.'">'.$i.'</a></li>';}
 	
 	//Επόμενη σελίδα στη τελευταία σελίδα
 	if($page_cur<$total_page)
 	{
 	
-		echo '<li class="page-item"><a class=page-link href="./dblp_total_view.php?&page='.($page_cur+1).'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>';
+		echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.($page_cur+1).'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>';
 	}
 	//Επόμενη σελίδα στη τρέχουσα
 	
@@ -192,13 +192,13 @@ if ($result_pg=mysqli_query($conn,$query_dblp))
 	if($page_cur<$total_page)
 	{
 		
-		echo '<li class="page-item"><a class=page-link href="dblp_total_view.php?&page='.($total_page).'">Τελευταία</a></li>';	
+		echo '<li class="page-item"><a class=page-link href="user_total_view.php?&page='.($total_page).'">Τελευταία</a></li>';	
 	}
 	
 	else
 	{
 	
-	 echo '<li class="page-item disabled"><a class=page-link href="dblp_total_view.php?&page='.($total_page).'">Τελευταία</a></li>';
+	 echo '<li class="page-item disabled"><a class=page-link href="user_total_view.php?&page='.($total_page).'">Τελευταία</a></li>';
 	}
 		
  echo '</ul></div>';
