@@ -60,7 +60,7 @@
 </p>	
 </div>
 <div align="center" class="col-sm-3" style="margin-top:20px">
-<p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><?php include ('rss_show.php'); ?></p>
+<p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><div style="background-color:#68C9A6"><?php include ('rss_show.php'); ?></div></p>
 </div> 
 </div>
 </div>

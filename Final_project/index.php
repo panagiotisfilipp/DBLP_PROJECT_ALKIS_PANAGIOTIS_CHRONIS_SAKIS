@@ -27,12 +27,28 @@
     <script src="./js_async_calls/register.js"></script>
 	<script src="./js_async_calls/counter.js"></script>
     <script src="./myScript.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   .navbar-custom {
     background-color:#7dc476;
-	<!--color:	#fff400;-->
-	
+  }
+video {
+  width: 100%;
+  height: auto;
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  width: 100%;
+}
+
   </style>
 </head>
 <body>
@@ -51,7 +67,7 @@
 <br>
 
 <div style="margin-top:12px;">
-  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="824" height="480" >
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="400" >
     <source src="./video/intro.webm" type="video/mp4">
   </video>
   </div>
@@ -61,7 +77,8 @@
 </p>	
 </div>
 <div align="center" class="col-sm-3" style="margin-top:20px">
-<p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><?php include ('rss_show.php'); ?></p>
+
+<p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><div style="background-color:#68C9A6"><?php include ('rss_show.php'); ?></div></p>
 </div> 
 </div>
 </div>
