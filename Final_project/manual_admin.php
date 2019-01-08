@@ -59,18 +59,12 @@ session_start();
   
   
 <div align="center" class="col-sm-12">
-
-<div align=left>
-<i class="fas fa-long-arrow-alt-right"></i><a href="manual_user.php"><strong>&nbsp;&nbsp;Α. Επισκέπτης Χρήστης</strong></a><br>
-<i class="fas fa-long-arrow-alt-right"></i><a href="manual_register.php"><strong>&nbsp;&nbsp;Β. Εγγεγραμμένος Χρήστης</strong></a>&nbsp;
-<hr><p>
-</div>
-
-<h4><strong>Γ. Χρήστης Διαχειριστής</strong></h4><br>
+<h4><strong><u>Οδηγίες Διαχειριστής</strong></h4></u><br>
 <p align=justify>
 Ο λογαριασμός Διαχειριστή είναι ένας χρήστης τα στοιχεία του οποίου (username, password, email) θα είναι ήδη τοποθετημένα από τους δημιουργούς της εφαρμογής.<br>
 O συγκεκριμένος χρήστης θα έχει ένα μενού επιλογών ως εξής:<br>
-
+&nbsp;&nbsp;&nbsp;<i class='fas fa-angle-right'></i>&nbsp;Στην Αρχική σελίδα <strong><u>«Στατιστικά»</u> </strong>θα μπορεί να βλέπει τον αριθμό των <strong><u>χρηστών</u></strong> που είναι εγγεγραμμένοι,
+τα συνολικά <strong><u>RSS</u></strong> που υπάρχουν στην βάση,τις <strong><u>δημοσιεύσεις</u></strong> απο <strong><u>DBLP</u></strong> που υπάρχουν στην βάση (Αναλυτική εμφάνιση αυτών) και τις <strong><u>δημοσιεύσεις</u></strong> που έχουν εισαχθεί απο <strong><u>χρήστες</u></strong> , απο άλλες πηγές (Αναλυτική εμφάνιση αυτών).<br>
 &nbsp;&nbsp;&nbsp;<i class='fas fa-angle-right'></i>&nbsp;Από το μενού <strong><u>«Χρήστες»</u> </strong>θα μπορεί να προβάλει τα στοιχεία των χρηστών, τα οποία θα μπορεί και να επεξεργαστεί.<br>
 
 &nbsp;&nbsp;&nbsp;<i class='fas fa-angle-right'></i>&nbsp;Από το μενού <strong><u>«Διαχείριση </u></strong><strong><u>RSS</u></strong><strong><u>»</u></strong> θα μπορεί να προβάλλει τα αποθηκευμένα RSS της βάσης του. Αυτά θα έχει την δυνατότητα να τα διαχειριστεί, δηλαδή να διαγράψει ,να τροποποιήσει ή να εισάγει ένα νέο RSS.<br>

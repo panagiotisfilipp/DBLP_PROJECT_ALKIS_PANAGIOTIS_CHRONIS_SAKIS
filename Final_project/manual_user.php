@@ -38,10 +38,28 @@ session_start();
     <script src="./js_async_calls/register.js"></script>
 	<script src="./js_async_calls/counter.js"></script>
     <script src="./myScript.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   .navbar-custom {
-    background-color:#7dc476;}
+    background-color:#7dc476;
+	}
+video {
+  width: 100%;
+  height: auto;
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  width: 100%;
+}
+
 
   </style>
 </head>
@@ -56,14 +74,16 @@ session_start();
 <div class="container" style="margin-top:50px" >
   <div class="row">
     <div align="center" class="col-sm-12">
+	<h4><b><u>Οδηγίες Επισκέπτη Χρήστη</b></u></h4><br>
+     <div style="margin-top:12px;">
+  <video playsinline="playsinline"  muted="muted" loop="loop" controls width="auto" height="480" >
+    <source src="./video/log_user" type="video/mp4">
+  </video>
+  </div>
+	 
 
-<div align=left>
-<i class="fas fa-long-arrow-alt-right"></i><a href="manual_register.php"><strong>&nbsp;&nbsp;Β. Εγγεγραμμένος Χρήστης</strong></a><br>
-<i class="fas fa-long-arrow-alt-right"></i><a href="manual_admin.php"><strong>&nbsp;&nbsp;Γ. Χρήστης Διαχειριστής</strong></a>
-<hr><p>
-</div>	
 
-<h4><b>Α. Επισκέπτης Χρήστης</b></h4><br>
+
 <p align="justify">
 
 Με την είσοδο στον διαδικτυακό τόπο ο χρήστης θα βλέπει την εισαγωγική οθόνη περιήγησης στην εφαρμογή.<br>

@@ -32,17 +32,35 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/animate.css">
-
+    <link rel="stylesheet" href="css/main.css">
     <script src="./js_async_calls/login.js"></script>
     <script src="./js_async_calls/register.js"></script>
 	<script src="./js_async_calls/counter.js"></script>
     <script src="./myScript.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   .navbar-custom {
-    background-color:#7dc476;
-	<!--color:	#fff400;-->
+  background-color:#7dc476;}
 	
+
+video {
+  width: 100%;
+  height: auto;
+}
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  width: 100%;
+}
+
+
+
   </style>
 </head>
  <body>
@@ -55,15 +73,13 @@ session_start();
 
 <div class="container" style="margin-top:50px" >
   <div class="row">
-    <div align="justify" class="col-sm-12">
-	
-<div align=left>
-<i class="fas fa-long-arrow-alt-right"></i><a href="manual_user.php"><strong>&nbsp;&nbsp;Α. Επισκέπτης Χρήστης</strong></a><br>
-<i class="fas fa-long-arrow-alt-right"></i><a href="manual_admin.php"><strong>&nbsp;&nbsp;Γ. Χρήστης Διαχειριστής</strong></a>
-<hr><p>
-</div>	
-
-<h4 align="center"><b>Β. Εγγεγραμμένος Χρήστης</b></h4><br>
+    <div align="center" class="col-sm-12">
+	<h4 align="center"><b><u>Οδηγίες Εγγεγραμμένου Χρήστη</b></u></h4><br>
+	  <div style="margin-top:12px;">
+  <video playsinline="playsinline" muted="muted" loop="loop" controls width="auto" height="480" >
+    <source src="./video/reg_user" type="video/mp4">
+  </video>
+  </div>
 
 <p align="justify">
 Με την εγγραφή στον διαδικτυακό τόπο ο χρήστης μπορεί να κάνει login στην εφαρμογή, οπότε και  θα βλέπει πάλι την εισαγωγική οθόνη περιήγησης στην εφαρμογή.<br>
@@ -97,7 +113,7 @@ session_start();
 Από το μενού επιλέγοντας «<strong><u>Αποσύνδεση</u></strong><strong>» </strong>o εγγεγραμμένος χρήστης εξέρχεται από την εφαρμογή ασφαλώς.<br>
 <br>
 <strong><i>Διευκρινίσεις:</i></strong> Η εφαρμογή θα λειτουργεί για όλους τους γνωστούς περιηγητές. Η εφαρμογή θα εμφανίζεται σωστά σε όλα τα είδη υπολογιστή, όπως Σταθερό υπολογιστή, Laptop, Κινητό, Tablet, με ανάλογη μορφοποίηση λόγω διαστάσεων συσκευής.</p>
-
+ <hr class="d-sm-none">
     </div>
 </div>
 </div>
