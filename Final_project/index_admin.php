@@ -73,12 +73,27 @@ if ($result_rss=mysqli_query($conn,$query_rss))
     <script src="./js_async_calls/register.js"></script>
 	<script src="./js_async_calls/counter.js"></script>
     <script src="./myScript.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   .navbar-custom {
     background-color:#7dc476;
-	<!--color:	#fff400;-->
-	
+  }
+	video {
+  width: 100%;
+  height: auto;
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  width: 100%;
+}
   </style>
 </head>
 <body>
@@ -158,9 +173,9 @@ if ($result_rss=mysqli_query($conn,$query_rss))
             </div>	
           </div>
 		 <div class="row">
-		  <div align="center" class="col-sm-9">
+		  <div align="center" class="col-sm-12">
 		 <div>
-  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="824" height="540" >
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="auto" >
     <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
   </video>
   </div>
@@ -171,7 +186,7 @@ if ($result_rss=mysqli_query($conn,$query_rss))
 </p>	
 </div>
 <div align="center" class="col-sm-3" style="margin-top:20px">
-<p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><?php include ('rss_show.php'); ?></p>
+<p><h3><img src="./images/rss_image2.png" width="32px" height="32px"/> RSS Feed</h3><br /><div style="background-color:#68C9A6"><?php include ('rss_show.php'); ?></div></p>
 </div>
  
 </div>

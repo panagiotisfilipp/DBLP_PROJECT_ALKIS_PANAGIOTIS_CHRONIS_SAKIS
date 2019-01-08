@@ -32,25 +32,47 @@
           <div class="col-md-12">
             <ul>
                 <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='1' ) { ?>
-		           <li><a href="index_reg.php">Αρχική Σελίδα</a></li><?php } ?>
+		           <li><a href="index_reg.php">Αρχική Σελίδα</a></li>
+				     <li class="hidden">/</li>
+					<li><a href="about.php">Ποιοι είμαστε</a></li>
+                     <li class="hidden">/</li>
+					 <li><a href="dblp.php">Το DBLP API</a></li>
+					<li class="hidden">/</li>
+                     <li><a href="manual_register.php">Οδηγίες για την Εφαρμογή</a></li>
+				   
+				   
+				   <?php 
+				   } ?>
 		  
 		       <?php  if (isset($_SESSION['username'])&& $_SESSION['role']=='0' ) { ?>
-		           <li><a href="index_admin.php">Αρχική Σελίδα</a></li><?php } ?>
-		    <?php  if (!isset($_SESSION['username'])) { ?>
-		   <li><a href="index.php">Αρχική Σελίδα</a></li><?php } ?>
-              
-              <li class="hidden">/</li>
+		           <li><a href="index_admin.php">Αρχική Σελίδα</a></li>
+				    <li class="hidden">/</li>
+					<li><a href="about.php">Ποιοι είμαστε</a></li>
+					<li class="hidden">/</li>
+                    <li><a href="dblp.php">Το DBLP API</a></li>
+					<li class="hidden">/</li>
+					<li><a href="manual_admin.php">Οδηγίες για την Εφαρμογή</a></li> 
+				   <?php } ?>
+		    
+			<?php  if (!isset($_SESSION['username'])) { ?>
+		   <li><a href="index.php">Αρχική Σελίδα</a></li> 
+		    <li class="hidden">/</li>
               <li><a href="about.php">Ποιοι είμαστε</a></li>
               <li class="hidden">/</li>
               <li><a href="dblp.php">Το DBLP API</a></li>
               <li class="hidden">/</li>
-              <li><a href="manual.php">Οδηγίες για την Εφαρμογή</a></li>
+		       <li><a href="manual_user.php">Οδηγίες για την Εφαρμογή</a></li> 
+		   
+		 <?php  } ?>
+              
+             
+           
             </ul>
           </div>
 
 		  <div class="col-md-12">
             <p>(C) All Rights Reserved <span>/</span> Designed and Developed by <a href="about.php" target="_blank">Four of us</a><br>
-            Copyright 2018 ΑΤΕΙΘ.    -  ΤΜΗΜΑ Π.Μ.Σ. Ευφυείς Τεχνολογίες Διαδικτύου
+            Copyright 2018 ΑΤΕΙΘ.-ΤΜΗΜΑ Π.Μ.Σ. Ευφυείς Τεχνολογίες Διαδικτύου
 		  </div>
         </div>
       </div>
