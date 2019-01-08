@@ -10,7 +10,7 @@ session_start();
 	unset($_SESSION['role']);
 	
   	header("location: index.php");
-  }li
+  }
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +57,8 @@ session_start();
 <!--Navbar end-->
 
 <div class="container" style="margin-top:70px" >
-  <div class="row">
-    <div align="center" class="col-sm-6">
+  
+  <!--  <div align="center" class="col-sm-6">
 	<div> <img src="./images/alkis3.png" class="rounded-circle" ></img></div> <br>
 	  <p>
       <b>Αλκιβιάδης Τζιώρας</b>
@@ -132,22 +132,122 @@ session_start();
 <div align="center" class="col-sm-6">
 		<a href="https://www.linkedin.com/in/chronis-koukaras-36978485/" target="_blank"> <img src="./images/linkedin1.png"/>LinkedIn</i></a>
 </div>
-</div>	
- </div>
+</div>	-->
+<div class="row">
+        <div class="col">
+            <div class="card card-dark bg-primary" style="height:18 em;">
+                <div class="card text-black">
+                <div class="card-body text-center h-300">
+                  <div class="card-body-icon text-center">
+                    <img src="./images/alkis3.png" class="rounded-circle" ></img><br /><br />
+					<p>
+      <b>Αλκιβιάδης Τζιώρας</b>
+      <br>		
+      </p>
+                  </div>
+                  <div class="mr-4">Ο Τζιώρας Αλκιβιάδης είναι προγραμματιστής και μεταπτυχιακός φοιτητής του Τμήματος Μηχανικών Πληροφορικής του ΑΤΕΙ Θεσσαλονίκης στις «Ευφυείς Τεχνολογίες Διαδικτύου». Ειδικεύεται στην κατασκευή ιστοσελίδων, e-shop και στην ανάπτυξη δικτυακών εφαρμογών με χρήση τεχνολογιών php, javascript, html. Είναι ιδιοκτήτης ατομικής επιχείρησης κατασκευής ιστοσελίδων  "Click2web" και ιδιοκτήτης της εταιρίας "Μηχανογραφική Εξυπηρέτηση Κοινοχρήστων".<br><br><br></div>
+                </div>
+                <a class="card-footer text-black clearfix small z-1" href="https://www.linkedin.com/in/alkis-tzioras" target="_blank">
+                  <span class="float-left"><img src="./images/linkedin1.png"/>LinkedIn</i></span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-dark bg-success">
+                <div class="card text-black">
+                <div class="card-body text-center h-300">
+                  <div class="card-body-icon text-center">
+                    <img src="./images/panag.png" class="rounded-circle" ></img><br /><br />
+					<p>
+      <b>Παναγιώτης Φιλιππάκης</b>
+      <br>		
+      </p>
+                  </div>
+                  <div class="mr-4">Ο Παναγιώτης Φιλιππάκης είναι προγραμματιστής και μεταπτυχιακός φοιτητής του Τμήματος Μηχανικών Πληροφορικής του ΑΤΕΙ Θεσσαλονίκης στις «Ευφυείς Τεχνολογίες Διαδικτύου». Ειδικεύεται στο Software Developing , Back-End Developing και στην ανάπτυξη δικτυακών εφαρμογών με χρήση τεχνολογιών php, javascript, html. Εργάζεται σαν μόνιμος Αξιωματικός της Πολεμικής Αεροπορίας και κατέχει την θέση του Προϊστάμενου Εκμετάλλευσης στο Τμήμα Πληροφορικής της 350 Πτέρυγας Κατευθυνόμενων Βλημάτων. Έχει ασχοληθεί σε μεγάλο βαθμό με την Διαχείριση Δικτύων (Windows Administrator) και την ασφάλεια αυτών.</div>
+                </div>
+                <a class="card-footer text-black clearfix small z-1" href="https://www.linkedin.com/in/panagiotis-filippakis-b761ab95/" target="_blank">
+                  <span class="float-left"><img src="./images/linkedin1.png"/>LinkedIn</i></span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+        </div>
+</div>		
+<div class="row">
+&nbsp;
+</div>
+<div class="row">		
+        <div class="col">
+            <div class="card card-dark bg-danger">
+                <div class="card text-black ">
+                <div class="card-body text-center h-300">
+                  <div class="card-body-icon text-center">
+                    <img src="./images/thanos2.png" class="rounded-circle" ></img><br /><br />
+					<p>
+      <b>Αθανάσιος Βάσκος</b>
+      <br>		
+      </p>
+                  </div>
+                  <div class="mr-4">Ο Αθανάσιος Βάσκος είναι απόφοιτος του Τμήματος Μηχανικών Πληροφορικήςτου Α.Τ.Ε.Ι. Θεσσαλονίκης. Εργάστηκε στα πλαίσια της πρακτικής του άσκησης ως technical support engineer στην εταιρία Lan Communications Ε.Π.Ε.(Lancom). Τώρα εργάζεται στην εταιρία Innovative Secure Technologies Ι.Κ.Ε. (innosec) ως προγραμματιστής ενώ παράλληλα είναι φοιτητής του μεταπτυχιακού προγράμματος σπουδών «Ευφυείς Τεχνολογίες Διαδικτύου» του Τμήματος Μηχανικών Πληροφορικής. Κύρια ενδιαφέροντά του αποτελούν ο προγραμματισμός εφαρμογών, τα δίκτυα υπολογιστών και η διαχείριση συστημάτων.</div>
+                </div>
+                <a class="card-footer text-black clearfix small z-1 center" href="https://www.linkedin.com/in/vaskos-athanasios/" target="_blank">
+                  <span class="center"><img src="./images/linkedin1.png"/>LinkedIn</i></span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-dark bg-warning">
+                <div class="card text-black">
+                <div class="card-body text-center h-300">
+                  <div class="card-body-icon text-center">
+                    <img src="./images/chronis3.png" class="rounded-circle" ></img><br /><br />
+					<p>
+      <b>Κουκάρας Πολυχρόνης</b>
+      <br>		
+      </p>
+                  </div>
+                  <div class="mr-4">Ο Πολυχρόνης Κουκάρας είναι Προγραμματιστής-Αναλυτής απόφοιτος του Τμήματος Μηχανικών Πληροφορικής του ΑΤΕΙ Θεσσαλονίκης και σήμερα μεταπτυχιακός φοιτητής του Τμήματος Μηχανικών Πληροφορικής του ΑΤΕΙ Θεσσαλονίκης στις «Ευφυείς Τεχνολογίες Διαδικτύου». 
+		Είναι Εκπαιδευτικός της Β'/μια Εκπαίδευση και διδάσκει μαθήματα πληροφορικής και προγραμματισμού. Ασχολείται με Web-Design, διαχείριση σχολικού δικτύου και είναι υπεύθυνος διαχείρισης και υποστήριξης μαθητικού δυναμικού σχολικής μονάδας.<br><br></div>
+                </div>
+                <a class="card-footer text-black clearfix small z-1" href="https://www.linkedin.com/in/chronis-koukaras-36978485/" target="_blank">
+                  <span class="float-left"><img src="./images/linkedin1.png"/>LinkedIn</i></span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>  
 
-
-
-
- <?php include ('footer.php');?> 
-  
- <?php include ('modal.php');?>
-               
+ </div> <!-- Container -->
+ 
+ 
 
 <div class="text-center">
-    
+    <?php include ('footer.php');?> 
 </div>
 
 
+
+
+
+ 
+ 
+
+  
+ <?php include ('modal.php');?>
+               
 
 </body>
 </html>
