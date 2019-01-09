@@ -65,8 +65,17 @@
                                                     
                                                     <div class="form-group">
 			                                            <label for="password">Κωδικός:</label>
+														<!----------------------->
+<div class="tax-wrap">
 			                                            <input class="form-control" id="password_1" name="password_1" placeholder="Δημιουργία νέου κωδικού" required 
 			    	                                       data-toggle="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
+														
+</div>
+<div class="hide-tax alert-info"">
+
+  &nbsp;<i class="fas fa-info-circle" style='font-size:16px'></i> 8 χαρακτήρες, 1 αριθμός , 1 πεζός &amp; 1 κεφαλαίος χαρακτήρας.<br> 
+ &nbsp;&nbsp; <b>Υπόδειγμα: Pas1word</b>
+</div>
 			                                        </div>
 			                                       <div class="form-group">
 			                                            <label for="password">Επαλήθευση Κωδικού:</label>
@@ -108,24 +117,30 @@
            <div class="form-group">
 		    
                                 <label class="col-sm-4 control-label" style="margin:5px 0px 10px 0px;" for="name">Τρέχων:</label>
-                                <div class="col-sm-10" style="margin-bottom:1px;">
+                               <!-- <div class="col-sm-10" style="margin-bottom:1px;">-->
                                     <input type="password" class="form-control" name="currentPassword" required placeholder="Τρέχων Συνθηματικό" autofocus data-toggle="password" id="currentPassword">
-                                </div>
+                                <!--</div>-->
                             </div>
                             
                             <div class="form-group">
                                 <label class="control-label col-sm-4" style="margin:5px 0px 10px 0px;" for="name">Νέο:</label>
-                                <div class="col-sm-10" style="margin-bottom:1px;">
+                            <!--    <div class="col-sm-10" style="margin-bottom:1px;">-->
+								<div class="tax-wrap">
                                     <input type="password" class="form-control" name="newPassword" required placeholder="Νέο Συνθηματικό" data-toggle="password" id="newPassword" 
 									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
-                                </div>
-                            </div>
+                              <!--  </div>-->
+								<div class="hide-tax alert-info"">
+
+  &nbsp;<i class="fas fa-info-circle" style='font-size:16px'></i> 8 χαρακτήρες, 1 αριθμός , 1 πεζός &amp; 1 κεφαλαίος χαρακτήρας.<br> 
+ &nbsp;&nbsp; <b>Υπόδειγμα: Pas1word</b>
+</div>
+                            </div></div>
                             
                             <div class="form-group">
                                 <label class="control-label col-sm-4"  for="name">Επανάληψη:</label>
-                                <div class="col-sm-10" style="margin-bottom:5px;">
+                              <!--  <div class="col-sm-10" style="margin-bottom:5px;">-->
                                     <input type="password" class="form-control" name="confirmPassword" required placeholder="Επανάληψη Συνθηματικού" data-toggle="password" id="confirmPassword">
-                                </div>
+                               <!-- </div>-->
                                 <input type="hidden" name="uri" value="<?php  echo $_SERVER['REQUEST_URI']; ?>">
                                 
 								 <div class="modal-footer">
@@ -213,6 +228,30 @@ if(newPassword.value==currentPassword.value){
 return output;
 } 
 </script> 
+
+
+<script>
+//Pop up gia endixi password
+$(document).ready(function() {
+	
+$('.hide-tax').hide();	
+	
+  $(".tax-wrap input").focus(function() {
+      $('.hide-tax').show('slow');       
+      //return false;
+    });
+    
+  
+ $('.tax-wrap input').blur(function(){
+    if( !$(this).val() ) {
+          $('.hide-tax').hide('slow');
+    }
+});
+
+  
+  
+});//end
+</script>
 
 
 

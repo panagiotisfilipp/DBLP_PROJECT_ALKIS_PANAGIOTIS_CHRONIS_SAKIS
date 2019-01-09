@@ -22,6 +22,28 @@ if($_GET['key'] && $_GET['reset'])
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script>
+//Pop up gia endixi password
+$(document).ready(function() {
+	
+$('.hide-tax').hide();	
+	
+  $(".tax-wrap input").focus(function() {
+      $('.hide-tax').show('slow');       
+      //return false;
+    });
+    
+  
+ $('.tax-wrap input').blur(function(){
+    if( !$(this).val() ) {
+          $('.hide-tax').hide('slow');
+    }
+});
+
+  
+  
+});//end
+</script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     </head>
     <body style="background-color:#7dc476;">
@@ -37,8 +59,14 @@ if($_GET['key'] && $_GET['reset'])
    <div class="form-group">
                                 <label class="control-label col-sm-4" style="margin:5px 0px 10px 0px;" for="name">Νέο:</label>
                                 <div class="col-sm-10" style="margin-bottom:1px;">
+								<div class="tax-wrap">
      <input type="password" class="form-control" name="password" required placeholder="Νέο Συνθηματικό" data-toggle="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
       </div>
+	  <div class="hide-tax alert-info"">
+
+  &nbsp;<i class="fas fa-info-circle" style='font-size:16px'></i> 8 χαρακτήρες, 1 αριθμός , 1 πεζός &amp; 1 κεφαλαίος χαρακτήρας.<br> 
+ &nbsp;&nbsp; <b>Υπόδειγμα: Pas1word</b>
+</div>
     </div>
   
   <div class="form-group">
