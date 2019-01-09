@@ -155,7 +155,7 @@ if ($result_pg=mysqli_query($conn,$query_dblp))
 	//Προηγούμενη σελίδα όταν γεμίσει η πρώτη σελίδα
 	if($page_cur>1)
 	{
-		echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.($page_cur-1).'"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></li>';
+		echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.($page_cur-1).'"><i class="fa fa-arrow-left" style="font-size:20px" aria-hidden="true"></i></a></li>';
 	}
 	//Προηγούμενη σελίδα στη πρώτη σελίδα
 	
@@ -183,7 +183,7 @@ if ($result_pg=mysqli_query($conn,$query_dblp))
 	if($page_cur<$total_page)
 	{
 	
-		echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.($page_cur+1).'"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>';
+		echo '<li class="page-item"><a class=page-link href="./user_total_view.php?&page='.($page_cur+1).'"><i class="fa fa-arrow-right" style="font-size:20px" aria-hidden="true"></i></a></li>';
 	}
 	//Επόμενη σελίδα στη τρέχουσα
 	
