@@ -71,7 +71,7 @@ $register_time_escaped = mysqli_real_escape_string($conn, $_POST['register_time'
 			 echo '<script language="javascript">alert_user.on("Τα στοιχεία του χρήστη τροποποιήθηκαν!"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_user.on("Η τροποποίηση του χρήστη δεν ήταν επιτυχής.")</script>';
+			echo '<script language="javascript">alert_user.on("Η τροποποίηση του χρήστη δεν ήταν επιτυχής.");</script>';
 			
 			exit();
 		 }

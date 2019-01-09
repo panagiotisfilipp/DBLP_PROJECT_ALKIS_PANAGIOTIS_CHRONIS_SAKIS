@@ -172,6 +172,11 @@ if ($result_rss=mysqli_query($conn,$query_rss))
               </div>
             </div>	
           </div>
+		  <div>
+		  <form name="edit_rss" method="post" action="maintenance.php" enctype="multipart/form-data">
+		  <button type='submit'  class='btn btn-danger'>ΕΚΚΑΘΑΡΙΣΗ ΒΑΣΗΣ</button>
+		  </form>
+		  </div>
 		 <div class="row">
 		  <div align="center" class="col-sm-12">
 		 <div>

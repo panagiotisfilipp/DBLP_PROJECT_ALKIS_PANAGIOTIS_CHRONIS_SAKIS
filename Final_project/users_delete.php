@@ -45,14 +45,14 @@ if($result->num_rows>0)
 			 echo '<script language="javascript">alert_user.on("Ο χρήστης  διαγράφηκε με επιτυχία"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_user.on("Η διαγραφή του χρήστη δεν ήταν επιτυχής.")</script>';
+			echo '<script language="javascript">alert_user.on("Η διαγραφή του χρήστη δεν ήταν επιτυχής.");</script>';
 			
 			exit();
 		 }
 }
 else
 {
-	echo '<script language="javascript">alert_user.on("Ανύπαρκτος χρήστης.")</script>';
+	echo '<script language="javascript">alert_user.on("Ανύπαρκτος χρήστης.");</script>';
 	
 	exit();
 }	

@@ -58,7 +58,7 @@ $link_escaped = mysqli_real_escape_string($conn, $_POST['link']);//kano escape x
 			 echo '<script language="javascript">alert_rss.on("Τα στοιχεία του rss τροποποιήθηκαν!"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_rss.on("Η τροποποίηση του rss δεν ήταν επιτυχής.")</script>';
+			echo '<script language="javascript">alert_rss.on("Η τροποποίηση του rss δεν ήταν επιτυχής.");</script>';
 			
 			exit();
 		 }

@@ -91,7 +91,7 @@ if ($result)
 			 echo '<script language="javascript">alert_paper.on("Τα Στοιχεία του Συγγράμματος τροποποιήθηκαν!");</script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Στοιχείων του Συγγράμματος δεν ήταν επιτυχής.")</script>';
+			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Στοιχείων του Συγγράμματος δεν ήταν επιτυχής.");</script>';
 			
 			exit();
 		 }

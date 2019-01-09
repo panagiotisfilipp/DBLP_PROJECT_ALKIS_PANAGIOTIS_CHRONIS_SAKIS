@@ -45,14 +45,14 @@ if($result->num_rows>0)
 			 echo '<script language="javascript">alert_rss.on("Το rss διαγράφηκε με επιτυχία"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_rss.on("Η διαγραφή του rss δεν ήταν επιτυχής.")</script>';
+			echo '<script language="javascript">alert_rss.on("Η διαγραφή του rss δεν ήταν επιτυχής.");</script>';
 			
 			exit();
 		 }
 }
 else
 {
-	echo '<script language="javascript">alert_rss.on("Ανύπαρκτο rss.")</script>';
+	echo '<script language="javascript">alert_rss.on("Ανύπαρκτο rss.");</script>';
 	
 	exit();
 }	

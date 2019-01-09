@@ -43,23 +43,21 @@ session_start();
   .navbar-custom {
     background-color:#7dc476;
 	}
-video {
-  width: 100%;
-  height: auto;
+
+.resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
 }
 
-.row:after {
-  content: "";
-  clear: both;
-  display: table;
+.resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
-
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-  width: 100%;
-}
-
 
   </style>
 </head>
@@ -76,9 +74,12 @@ video {
     <div align="center" class="col-sm-12">
 	<h4><b><u>Οδηγίες Επισκέπτη Χρήστη</b></u></h4><br>
      <div style="margin-top:12px;">
-  <video playsinline="playsinline"  muted="muted" loop="loop" controls width="auto" height="480" >
-    <source src="./video/log_user" type="video/mp4">
-  </video>
+  
+     <div class="resp-container">
+    <iframe style="border:2px solid grey;" class="resp-iframe" src="https://www.youtube.com/embed/HW30fmPgNe0 " gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+  
+  </div> 
   </div>
 	 
 
