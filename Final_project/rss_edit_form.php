@@ -104,7 +104,7 @@ if ($result)
 <!--forma rss-->
 <div class="container" style="margin-top:70px" >
   <div class="row">
-<div align="center" class="col-sm-8">
+<div align="center" class="col-sm-12">
 
 <form name="edit_rss" method="post" action="rss_update.php" enctype="multipart/form-data">
 <h3><b>ΕΠΕΞΕΡΓΑΣΙΑ ΣΤΟΙΧΕΙΩΝ RSS</h3><br></th>
