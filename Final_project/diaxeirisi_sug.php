@@ -297,7 +297,7 @@ if (isset($_POST['search_p']) &&  !$_POST['search_p']==""){
 					  <div class="input-group-prepend">
                         <span class="input-group-text">Σύνδεσμος:</span>
                        </div>
-					    <input type="text" class="form-control" id="url" placeholder="Εισάγετε url" name="url" required >
+					    <input type="text" class="form-control" id="url" title="Το url σας πρέπει να ξεκινάει απο http:// ή https://" placeholder="Εισάγετε url" name="url" required pattern="https?://.+" >
                     </div>
 					<div class="input-group mb-3">
 					  <div class="input-group-prepend">
