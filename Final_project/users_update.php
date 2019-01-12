@@ -18,7 +18,7 @@
 <?php
 //Σύνδεση με τη Βάση 
 include("config.php");
-
+$pas_post=$_POST['password'];//trabame timi apo post
 //Ερώτημα που φέρνει την επιλεγμένη εγγραφή για τροποποίηση
 	$select_query ="SELECT * FROM users WHERE user_id='".$_POST['user_id']."'";
 	$result=$conn->query($select_query) or die ('Error, query failed check_post');
@@ -35,17 +35,19 @@ include("config.php");
 	$email=$rows[0]['email'];
 	$role=$rows[0]['role'];
 	$register_time=$rows[0]['register_time'];
-}	
+}
+	
+$password_post = password_hash($pas_post,PASSWORD_DEFAULT);//hasharisma sto password apo post
 	
 //Έλεγχος αλλαγής στοιχείων
-	if ($_POST['name']==$name && $_POST['surname']==$surname && $_POST['username']==$username && $_POST['password']==$password && $_POST['email']==$email && $_POST['role']==$role && $_POST['register_time']==$register_time)
+	if ($_POST['name']==$name && $_POST['surname']==$surname && $_POST['username']==$username && $password_post==$password && $_POST['email']==$email && $_POST['role']==$role && $_POST['register_time']==$register_time)
 		echo '<script language="javascript">alert_user.on("Δεν έγινε καμία αλλαγή!.");
 	    </script>';
 	else
 	{
-		
-	$username_escaped = mysqli_real_escape_string($conn, $_POST['username']);//kano escape xaraktires 
-$password_escaped = mysqli_real_escape_string($conn, $_POST['password']);//kano escape xaraktires 
+	
+$username_escaped = mysqli_real_escape_string($conn, $_POST['username']);//kano escape xaraktires 
+$password_escaped = mysqli_real_escape_string($conn, $password_post);//kano escape xaraktires 
 $email_escaped = mysqli_real_escape_string($conn, $_POST['email']);//kano escape xaraktires 	
 $role_escaped = mysqli_real_escape_string($conn, $_POST['role']);//kano escape xaraktires 
 $name_escaped = mysqli_real_escape_string($conn, $_POST['name']);//kano escape xaraktires
@@ -71,7 +73,7 @@ $register_time_escaped = mysqli_real_escape_string($conn, $_POST['register_time'
 			 echo '<script language="javascript">alert_user.on("Τα στοιχεία του χρήστη τροποποιήθηκαν!"); </script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_user.on("Η τροποποίηση του χρήστη δεν ήταν επιτυχής.");</script>';
+			echo '<script language="javascript">alert_user.on("Η τροποποίηση του χρήστη δεν ήταν επιτυχής.")</script>';
 			
 			exit();
 		 }
