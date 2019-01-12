@@ -6,7 +6,7 @@ include('lock.php');
 <html>
 <meta charset="utf-8"/>
 <head>
-    <title>Διαχείριση RSS</title>
+    <title>Διαχείριση Χρηστών</title>
 	<link rel="shortcut icon" type="image/x-icon" href="logo2.ico" />     
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 	<!-- Required meta tags -->
