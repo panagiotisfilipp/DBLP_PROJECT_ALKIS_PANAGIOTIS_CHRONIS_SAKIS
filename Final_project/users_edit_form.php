@@ -115,7 +115,7 @@ if ($result)
 <!--forma users-->
 <div class="container" style="margin-top:70px" >
   <div class="row">
-<div align="center" class="col-sm-8">
+<div align="center" class="col-sm-12">
 
 <form name="edit_user" method="post" action="users_update.php" enctype="multipart/form-data">
 	<h3><b>ΕΠΕΞΕΡΓΑΣΙΑ ΣΤΟΙΧΕΙΩΝ ΧΡΗΣΤΩΝ</h3><br></th>
