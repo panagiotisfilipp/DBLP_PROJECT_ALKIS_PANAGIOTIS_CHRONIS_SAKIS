@@ -71,8 +71,8 @@
 			    	                                       data-toggle="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
 														
 </div>
-<div class="hide-tax alert-info"">
-                   <input type="button" value="Παραγωγή Κωδικού" onClick="populateform(this.form.thelength.value)"><br />
+<div class="hide-tax alert-info">
+                   <input type="button" value="Παραγωγή Κωδικού" onClick="populateform(this.form.thelength.value)">&nbsp;&nbsp;<button  onclick="copyFunction()">Αντιγραφή</button><br/>
 				   <input type="hidden" name="thelength" size=3 value="8">
   &nbsp;<i class="fas fa-info-circle" style='font-size:16px'></i> 8 χαρακτήρες, 1 αριθμός , 1 πεζός &amp; 1 κεφαλαίος χαρακτήρας.<br> 
  &nbsp;&nbsp; <b>Υπόδειγμα: Pas1word</b></br>
@@ -131,7 +131,7 @@
                                     <input type="password" class="form-control" name="newPassword" required placeholder="Νέο Συνθηματικό" data-toggle="password" id="newPassword" 
 									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
                               <!--  </div>-->
-								<div class="hide-tax alert-info"">
+								<div class="hide-tax alert-info">
                    <input type="button" value="Παραγωγή Κωδικού" onClick="populateform_change(this.form.thelength.value)"><br />
 				   <input type="hidden" name="thelength" size=3 value="8">
   &nbsp;<i class="fas fa-info-circle" style='font-size:16px'></i> 8 χαρακτήρες, 1 αριθμός , 1 πεζός &amp; 1 κεφαλαίος χαρακτήρας.<br> 
@@ -323,6 +323,15 @@ var generatePassword_change = function(numLc, numUc, numDigits) {
 }
 function populateform_change(enterlength){
 document.frmChange.newPassword.value=generatePassword_change(enterlength)
+}
+
+///copy pass to cliboard
+
+function copyFunction() {
+  var copyText = document.getElementById("password_1");
+  copyText.select();
+  document.execCommand("copy");
+  alert("Ο κωδικός σας έγινε αντιγραφή στο cliboard: " + copyText.value);
 }
 </script>
 
