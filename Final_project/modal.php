@@ -44,7 +44,7 @@
                                             <div id="registration-form" class="tab-pane fade">
 											    
                                                     
-                                                <form method="post" action="register.php" id="register_form">
+                                                <form  name="pgenerate" method="post" action="register.php" id="register_form">
 												<div class="form-group">
                                                         <label for="surname">Επώνυμο:</label>
                                                         <input type="text" class="form-control" id="surname" placeholder="Εισάγετε το επώνυμο σας" name="surname" required>
@@ -72,9 +72,11 @@
 														
 </div>
 <div class="hide-tax alert-info"">
-
+                   <input type="button" value="Παραγωγή Κωδικού" onClick="populateform(this.form.thelength.value)"><br />
+				   <input type="hidden" name="thelength" size=3 value="8">
   &nbsp;<i class="fas fa-info-circle" style='font-size:16px'></i> 8 χαρακτήρες, 1 αριθμός , 1 πεζός &amp; 1 κεφαλαίος χαρακτήρας.<br> 
- &nbsp;&nbsp; <b>Υπόδειγμα: Pas1word</b>
+ &nbsp;&nbsp; <b>Υπόδειγμα: Pas1word</b></br>
+                  
 </div>
 			                                        </div>
 			                                       <div class="form-group">
@@ -130,7 +132,8 @@
 									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Πρέπει να έχει 8 χαρακτήρες,να περιέχει τουλάχιστον έναν αριθμό,ένα πεζό και ένα κεφαλαίο χαρακτήρα." required>
                               <!--  </div>-->
 								<div class="hide-tax alert-info"">
-
+                   <input type="button" value="Παραγωγή Κωδικού" onClick="populateform_change(this.form.thelength.value)"><br />
+				   <input type="hidden" name="thelength" size=3 value="8">
   &nbsp;<i class="fas fa-info-circle" style='font-size:16px'></i> 8 χαρακτήρες, 1 αριθμός , 1 πεζός &amp; 1 κεφαλαίος χαρακτήρας.<br> 
  &nbsp;&nbsp; <b>Υπόδειγμα: Pas1word</b>
 </div>
@@ -251,6 +254,76 @@ $('.hide-tax').hide();
   
   
 });//end
+
+// Generate a password string
+var generatePassword = function(numLc, numUc, numDigits) {
+  numLc = numLc || 0;
+  numUc = numUc || 1;
+  numDigits = numDigits || 1;
+  
+
+
+  var lcLetters = 'abcdefghijklmnopqrstuvwxyz';
+  var ucLetters = lcLetters.toUpperCase();
+  var numbers = '0123456789';
+  
+
+  var getRand = function(values) {
+    return values.charAt(Math.floor(Math.random() * values.length));
+  }
+
+ 
+  function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  };
+
+  var pass = [];
+  for(var i = 0; i < numLc-2; ++i) { pass.push(getRand(lcLetters)) }
+  for(var i = 0; i < numUc; ++i) { pass.push(getRand(ucLetters)) }
+  for(var i = 0; i < numDigits; ++i) { pass.push(getRand(numbers)) }
+  
+
+  return shuffle(pass).join('');
+}
+function populateform(enterlength){
+document.pgenerate.password_1.value=generatePassword(enterlength)
+}
+
+//generate for allagi kodikou 
+var generatePassword_change = function(numLc, numUc, numDigits) {
+  numLc = numLc || 0;
+  numUc = numUc || 1;
+  numDigits = numDigits || 1;
+  
+
+
+  var lcLetters = 'abcdefghijklmnopqrstuvwxyz';
+  var ucLetters = lcLetters.toUpperCase();
+  var numbers = '0123456789';
+  
+
+  var getRand = function(values) {
+    return values.charAt(Math.floor(Math.random() * values.length));
+  }
+
+ 
+  function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  };
+
+  var pass = [];
+  for(var i = 0; i < numLc-2; ++i) { pass.push(getRand(lcLetters)) }
+  for(var i = 0; i < numUc; ++i) { pass.push(getRand(ucLetters)) }
+  for(var i = 0; i < numDigits; ++i) { pass.push(getRand(numbers)) }
+  
+
+  return shuffle(pass).join('');
+}
+function populateform_change(enterlength){
+document.frmChange.newPassword.value=generatePassword_change(enterlength)
+}
 </script>
 
 
