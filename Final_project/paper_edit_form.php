@@ -166,7 +166,7 @@ if ($result2)
    		       echo"<input type='text'  size='55' value='".$title."' name='title'>";
           	 }
 			else{
-			   echo"<input type='text'  size='55' value='".$title."' name='title' tabindex='-1' readonly style='background-color:grey;'>"; 
+			   echo"<input type='text'  size='55' value='".$title."' name='title' tabindex='-1' readonly style='background-color:#E1E1E1;'>"; 
 				}?> 
 			</td>
 		</tr>
@@ -178,7 +178,7 @@ if ($result2)
    		       echo"<input type='text'  size='55' value='".$authors."' name='authors'>";
           	 }
 			else{
-			   echo"<input type='text'  size='55' value='".$authors."' name='authors' tabindex='-1' readonly style='background-color:grey;'>"; 
+			   echo"<input type='text'  size='55' value='".$authors."' name='authors' tabindex='-1' readonly style='background-color:#E1E1E1;'>"; 
 				}?> 
 			</td>
 		</tr>
@@ -202,7 +202,7 @@ if ($result2)
           	 }
 			else{
 				
-				echo"<select name='type' style='background-color:grey;'>
+				echo"<select name='type' style='background-color:#E1E1E1;'>
 			
 			<option value='".$type."' selected>$type</option>
 			</select>";
@@ -220,7 +220,7 @@ if ($result2)
    		       echo"<input type='text'  size='55' value='".$url."' name='url'>";
           	 }
 			else{
-			   echo"<input type='text'  size='55' value='".$url."' name='url' tabindex='-1' readonly style='background-color:grey;'>"; 
+			   echo"<input type='text'  size='55' value='".$url."' name='url' tabindex='-1' readonly style='background-color:#E1E1E1;'>"; 
 				}?> 
 			
 			</td>
@@ -233,7 +233,7 @@ if ($result2)
    		       echo"<input type='text'  size='55' value='".$year."' name='year'>";
           	 }
 			else{
-			   echo"<input type='text'  size='55' value='".$year."' name='year' tabindex='-1' readonly style='background-color:grey;'>"; 
+			   echo"<input type='text'  size='55' value='".$year."' name='year' tabindex='-1' readonly style='background-color:#E1E1E1;'>"; 
 				}?> 
 
 			</td>
