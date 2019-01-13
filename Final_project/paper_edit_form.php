@@ -109,7 +109,7 @@ if ($result2)
 <html>
 <meta charset="utf-8"/>
 <head>
-    <title>Επεξεργασία Συγγράμματος</title>
+    <title>Επεξεργασία Δημοσιεύσης</title>
 	<link rel="shortcut icon" type="image/x-icon" href="logo2.ico" />     
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 	<!-- Required meta tags -->
@@ -153,7 +153,7 @@ if ($result2)
 <div align="center" class="col-sm-12">
 
 <form name="edit_paper" method="post" action="paper_update.php" enctype="multipart/form-data">
-<h3><b>ΕΠΕΞΕΡΓΑΣΙΑ ΣΥΓΓΡΑΜΜΑΤΟΣ</h3><br></th>
+<h3><b>ΕΠΕΞΕΡΓΑΣΙΑ ΔΗΜΟΣΙΕΥΣΗΣ</h3><br></th>
 	<div class="table-responsive">
        <table class="table table-striped table-bordered">
 	   
@@ -261,8 +261,8 @@ if ($result2)
 	</table>
 	
 	<br><br>	
-	<strong>Τροποποίηση Συγγράματος</strong>
-	<p>Σ' αυτή τη φόρμα ο Χρήστης μπορεί να τροποποιήσει τα στοιχεία του συγγράματος.</p>
+	<strong>Τροποποίηση Δημοσιεύσης</strong>
+	<p>Σ' αυτή τη φόρμα ο Χρήστης μπορεί να τροποποιήσει τα στοιχεία της Δημοσιεύσης.</p>
 
 </form>
 

@@ -45,7 +45,7 @@
 <div class="container" style="margin-top:70px" >
   <div class="row">
 <div align="center" class="col-sm-12">
-    <h3><b>Αποτελέσματα Αναζήτησης Συγγραμμάτων</b></h3><br />
+    <h3><b>Αποτελέσματα Αναζήτησης Δημοσιεύσεων</b></h3><br />
     <div class="shadow p-3 mb-5 navbar-custom2 rounded">
 <div class="table-responsive">
        <table class="table table-striped table-bordered">

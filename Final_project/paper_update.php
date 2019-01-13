@@ -88,10 +88,10 @@ if ($result)
 		
 		//Μήνυμα ενημέρωσης
 		 if ($update_notes_m && $update_query_m)
-			 echo '<script language="javascript">alert_paper.on("Τα Στοιχεία του Συγγράμματος τροποποιήθηκαν!");</script>';
+			 echo '<script language="javascript">alert_paper.on("Τα Στοιχεία της Δημοσίευσης τροποποιήθηκαν!");</script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Στοιχείων του Συγγράμματος δεν ήταν επιτυχής.");</script>';
+			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Στοιχείων της Δημοσίευσης δεν ήταν επιτυχής.");</script>';
 			
 			exit();
 		 }
@@ -130,10 +130,10 @@ else{
 		
 		//Μήνυμα ενημέρωσης
 		 if ($update_notes)
-			 echo '<script language="javascript">alert_paper.on("Τα Σχόλια του Συγγράμματος τροποποιήθηκαν!");</script>';
+			 echo '<script language="javascript">alert_paper.on("Τα Σχόλια της Δημοσίευσης τροποποιήθηκαν!");</script>';
 		 else
 		 {
-			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Σχολίων του Συγγράμματος δεν ήταν επιτυχής.")</script>';
+			echo '<script language="javascript">alert_paper.on("Η τροποποίηση των Σχολίων της Δημοσίευσης δεν ήταν επιτυχής.")</script>';
 			
 			exit();
 		 }

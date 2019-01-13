@@ -25,7 +25,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Αναζήτηση Συγγραμμάτων</title>
+  <title>Αναζήτηση Δημοσιεύσεων</title>
   
   <link rel="shortcut icon" type="image/x-icon" href="logo2.ico" />     
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">

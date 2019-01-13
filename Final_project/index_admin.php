@@ -145,7 +145,7 @@ if ($result_rss=mysqli_query($conn,$query_rss))
                   <div class="card-body-icon">
                     <i class="fas fa-university" style='font-size:36px'></i>
                   </div>
-                  <div class="mr-6"><?php echo $count_dblp;?> Συγγράμματα DBLP!</div>
+                  <div class="mr-6"><?php echo $count_dblp;?> Δημοσιεύσεις DBLP!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="./dblp_total_view.php">
                   <span class="float-left">Λεπτομέρειες</span>
@@ -161,7 +161,7 @@ if ($result_rss=mysqli_query($conn,$query_rss))
                   <div class="card-body-icon">
                     <i class="fas fa-address-book" style='font-size:36px'></i>
                   </div>
-                  <div class="mr-6"><?php echo $count_paper_user;?> Συγγράμματα Χρήστών!</div>
+                  <div class="mr-6"><?php echo $count_paper_user;?> Δημοσιεύσεις Χρήστών!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="./user_total_view.php">
                   <span class="float-left">Λεπτομέρειες</span>

@@ -20,7 +20,7 @@
             <a class="nav-link"   href="index.php">  <i class="fa fa-home" aria-hidden="true"></i> Αρχική</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link"   href="index_guest.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Συγγραμμάτων</a>
+            <a class="nav-link"   href="index_guest.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Δημοσιεύσεων</a>
           </li>
           		<li class="nav-item">
             <a class="nav-link"   href="contact_guest.php">  <i class="fa fa-envelope" aria-hidden="true"></i> Επικοινωνία</a>
@@ -35,9 +35,9 @@
             <a class="nav-link"   href="index_reg.php">  <i class="fa fa-home" aria-hidden="true"></i> Αρχική</a>
           </li>
           <li class="nav-item ">
-		   <a class="nav-link"   href="index_login.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Συγγραμμάτων</a>
+		   <a class="nav-link"   href="index_login.php">  <i class="fas fa-database"aria-hidden="true"></i> Αναζήτηση Δημοσιεύσεων</a>
 		   </li>
-            <a class="nav-link"   href="diax_login.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Συγγραμμάτων</a>
+            <a class="nav-link"   href="diax_login.php">  <i class="fas fa-database"aria-hidden="true"></i> Διαχείριση Δημοσιεύσεων</a>
           </li>
 		   	 
 	  
