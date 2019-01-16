@@ -37,15 +37,15 @@ $pas_post=$_POST['password'];//trabame timi apo post
 	$register_time=$rows[0]['register_time'];
 }
 	
-$password_post = password_hash($pas_post,PASSWORD_DEFAULT);//hasharisma sto password apo post
+
 	
 //Έλεγχος αλλαγής στοιχείων
-	if ($_POST['name']==$name && $_POST['surname']==$surname && $_POST['username']==$username && $password_post==$password && $_POST['email']==$email && $_POST['role']==$role && $_POST['register_time']==$register_time)
+	if ($_POST['name']==$name && $_POST['surname']==$surname && $_POST['username']==$username && $POST['password']==$password && $_POST['email']==$email && $_POST['role']==$role && $_POST['register_time']==$register_time)
 		echo '<script language="javascript">alert_user.on("Δεν έγινε καμία αλλαγή!.");
 	    </script>';
 	else
 	{
-	
+$password_post = password_hash($pas_post,PASSWORD_DEFAULT);//hasharisma sto password apo post	
 $username_escaped = mysqli_real_escape_string($conn, $_POST['username']);//kano escape xaraktires 
 $password_escaped = mysqli_real_escape_string($conn, $password_post);//kano escape xaraktires 
 $email_escaped = mysqli_real_escape_string($conn, $_POST['email']);//kano escape xaraktires 	
